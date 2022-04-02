@@ -20,6 +20,9 @@ public class CharacterMovement : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         speed = new Vector2(horizontalInput * velocity, verticalInput * velocity);
 
+        if (horizontalInput != 0 || verticalInput != 0)
+            TaskController.GetInstance().DoneTask(TaskController.TasksEnum.FLY);
+
         if (Input.GetKeyDown(KeyCode.F))
             InteractionSystem.GetInstance().EnterInteraction();
 

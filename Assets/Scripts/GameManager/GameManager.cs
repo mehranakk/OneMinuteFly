@@ -49,9 +49,13 @@ public class GameManager : MonoBehaviour
 
     IEnumerator UpdateTime()
     {
-        while (!isGamePaused)
+        while (true)
         {
-            UpdateLifeTimer();
+            while (!isGamePaused)
+            {
+                UpdateLifeTimer();
+                yield return new WaitForSeconds(1);
+            }
             yield return new WaitForSeconds(1);
         }
     }
@@ -80,9 +84,6 @@ public class GameManager : MonoBehaviour
 
         ResetLifeTimer();
         isGamePaused = false;
-
-        StartCoroutine(UpdateTime());
-
     }
 
     private void GameOver()
@@ -108,6 +109,16 @@ public class GameManager : MonoBehaviour
             lifeTimeUI.color = Color.yellow;
         else
             lifeTimeUI.color = Color.red;
+    }
+
+    public void PauseMainGame()
+    {
+        isGamePaused = true;
+    }
+
+    public void UnpauseMainGame()
+    {
+        isGamePaused = false;
     }
 
     public static GameManager GetInstance()
@@ -141,6 +152,7 @@ public class GameManager : MonoBehaviour
         camera = GameObject.Find("Main Camera").GetComponent<Camera>();
         InitCanvas();
         MatingSystem.GetInstance().Init();
+        TaskController.GetInstance().Init();
     }
 
     private void ResetLifeTimer()
