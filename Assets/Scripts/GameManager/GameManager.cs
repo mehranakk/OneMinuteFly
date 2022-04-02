@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     private GameObject canvas;
     private int lifeTimer;
     private TextMeshProUGUI lifeTimeUI;
+    private GameObject helpTextUI;
 
     private void Awake()
     {
@@ -100,6 +101,13 @@ public class GameManager : MonoBehaviour
         lifeTimer -= 1;
         string lifeTimerString = string.Format("Life Time: {0}:{1:00}", lifeTimer / 60, lifeTimer % 60);
         lifeTimeUI.text = lifeTimerString;
+
+        if (lifeTimer > 25)
+            lifeTimeUI.color = Color.cyan;
+        else if (lifeTimer > 10)
+            lifeTimeUI.color = Color.yellow;
+        else
+            lifeTimeUI.color = Color.red;
     }
 
     public static GameManager GetInstance()
@@ -121,6 +129,11 @@ public class GameManager : MonoBehaviour
         return player;
     }
 
+    public GameObject GetHelpText()
+    {
+        return helpTextUI;
+    }
+
     private void InitAll()
     {
         ResetLifeTimer();
@@ -132,13 +145,15 @@ public class GameManager : MonoBehaviour
 
     private void ResetLifeTimer()
     {
-        lifeTimer = 5;
+        lifeTimer = 30;
     }
 
     private void InitCanvas()
     {
         canvas = GameObject.Find("Canvas");
         lifeTimeUI = canvas.transform.Find("LifeTimer").GetComponent<TextMeshProUGUI>();
+        helpTextUI = canvas.transform.Find("HelpText").gameObject;
+
     }
 
     private void OnDestroy()

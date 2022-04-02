@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MatingSystem
 {
@@ -40,6 +41,11 @@ public class MatingSystem
             f.UnlockInteraction();
         foreach (Mate m in mates)
             m.LockInteraction();
+
+        // Setting Help Text
+        GameObject helpText = GameManager.GetInstance().GetHelpText();
+        helpText.GetComponent<TextMeshProUGUI>().text = "Go to a flower to mate";
+        helpText.SetActive(true);
     }
 
     public bool IsMateFollowing()
@@ -56,5 +62,8 @@ public class MatingSystem
         followingMate = null;
         foreach (Flower f in flowers)
             f.LockInteraction();
+
+        GameObject helpText = GameManager.GetInstance().GetHelpText();
+        helpText.SetActive(false);
     }
 }
