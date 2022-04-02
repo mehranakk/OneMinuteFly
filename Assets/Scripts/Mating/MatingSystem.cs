@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using TMPro;
 
 public class MatingSystem
 {
+    [SerializeField] private GameObject prefab;
+    private MateSpawner spawner;
+    public static List<Vector3> spawnPoints = new List<Vector3>();
+
     private Mate followingMate;
     private static MatingSystem instance;
-    private Flower[] flowers;
-    private Mate[] mates;
+    
+    public static List<Mate> mates = new List<Mate>();
+    public static List<Flower> flowers = new List<Flower>();
 
     private MatingSystem()
     {
@@ -16,8 +22,7 @@ public class MatingSystem
 
     public void Init()
     {
-        flowers = GameObject.FindObjectsOfType<Flower>();
-        mates = GameObject.FindObjectsOfType<Mate>();
+        spawner = GameObject.FindObjectOfType<MateSpawner>();
     }
 
     public static MatingSystem GetInstance()
@@ -64,11 +69,17 @@ public class MatingSystem
     {
         followingMate.GetComponent<Mate>().MateInFlower(flower);
         GameManager.GetInstance().SetCheckpointFlower(flower);
+
+        followingMate.GetComponent<Mate>().DestroySelf();
+
         followingMate = null;
         foreach (Flower f in flowers)
             f.LockInteraction();
 
         GameObject helpText = GameManager.GetInstance().GetHelpText();
         helpText.SetActive(false);
+
+        spawner.SpawnMate();
     }
+
 }

@@ -14,7 +14,7 @@ ScriptedImporter:
   _customLevelPrefab: {instanceID: 0}
   _deparentInRuntime: 0
   _intGridValueColorsVisible: 0
-  _useCompositeCollider: 0
+  _useCompositeCollider: 1
   _createBackgroundColor: 0
   _intGridValues:
   - _key: IntGrid_1
@@ -28,6 +28,8 @@ ScriptedImporter:
   _entities:
   - _key: Flower
     _asset: {fileID: 1917626902447448063, guid: 4df6ca293e5ca4d7784a841ddf7a0c71, type: 3}
+  - _key: SpawnPoint
+    _asset: {fileID: 3006186227112272572, guid: 4c8fad0f92dae48919aadc8f1a406461, type: 3}
   _enumGenerate: 0
   _enumPath: 
   _enumNamespace: 

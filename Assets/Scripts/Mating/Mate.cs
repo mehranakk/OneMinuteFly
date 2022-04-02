@@ -9,6 +9,17 @@ public class Mate : Interactable
     private GameObject matingFlower;
     [SerializeField] private float followDistance = 2;
     [SerializeField] private float velocity = 4;
+
+    private void OnEnable()
+    {
+        MatingSystem.mates.Add(this);
+    }
+
+    private void OnDisable()
+    {
+        MatingSystem.mates.Remove(this);
+    }
+
     public override void Interact()
     {
         Debug.Log("Interact With Mate");
@@ -55,5 +66,10 @@ public class Mate : Interactable
     {
         matingFlower = flower;
         alreadyMated = true;
+    }
+
+    public void DestroySelf()
+    {
+        Destroy(this.gameObject);
     }
 }
