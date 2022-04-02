@@ -37,8 +37,13 @@ public class MatingSystem
     public void SetFollowingMateAndUnlockFlowers(Mate mate)
     {
         followingMate = mate;
+        Debug.Log("unlocking flowers");
         foreach (Flower f in flowers)
+        {
+            Debug.Log("flower unlocked: " + f.gameObject.name);
             f.UnlockInteraction();
+        }
+            
         foreach (Mate m in mates)
             m.LockInteraction();
 
