@@ -17,6 +17,9 @@ public class CharacterMovement : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         speed = new Vector2(horizontalInput * velocity, verticalInput * velocity);
 
+        if (Input.GetKeyDown(KeyCode.F))
+            InteractionSystem.GetInstance().EnterInteraction();
+
         transform.Translate(speed * Time.deltaTime);
     }
 }
