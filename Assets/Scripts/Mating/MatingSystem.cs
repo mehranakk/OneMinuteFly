@@ -26,6 +26,13 @@ public class MatingSystem
         return instance;
     }
 
+    public void Reset()
+    {
+        foreach (Mate m in mates)
+            if (!m.alreadyMated)
+                m.UnlockInteraction();
+    }
+
     public void SetFollowingMateAndUnlockFlowers(Mate mate)
     {
         followingMate = mate;
@@ -45,6 +52,7 @@ public class MatingSystem
     public void DoMateInFlower(GameObject flower)
     {
         followingMate.GetComponent<Mate>().MateInFlower(flower);
+        GameManager.GetInstance().SetCheckpointFlower(flower);
         followingMate = null;
         foreach (Flower f in flowers)
             f.LockInteraction();

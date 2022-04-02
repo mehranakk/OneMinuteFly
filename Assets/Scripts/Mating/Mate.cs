@@ -5,6 +5,7 @@ using UnityEngine;
 public class Mate : Interactable
 {
     private bool isFollowing = false;
+    public bool alreadyMated = false; 
     private GameObject matingFlower;
     [SerializeField] private float followDistance = 2;
     [SerializeField] private float velocity = 4;
@@ -34,6 +35,8 @@ public class Mate : Interactable
     private void FollowPlayer()
     {
         GameObject player = GameManager.GetInstance().GetPlayer();
+        if (player.GetComponent<CharacterMovement>().IsDead())
+            return;
         if (Vector2.Distance(transform.position, player.transform.position) < followDistance)
             return;
         Vector2 direction = (player.transform.position - transform.position);
@@ -50,6 +53,7 @@ public class Mate : Interactable
 
     public void MateInFlower(GameObject flower)
     {
-        matingFlower = flower; 
+        matingFlower = flower;
+        alreadyMated = true;
     }
 }
