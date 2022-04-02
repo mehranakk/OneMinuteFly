@@ -2,27 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionSystem : MonoBehaviour
+public class InteractionSystem
 {
     private Interactable currentIntractableObject;
-
     private static InteractionSystem instance;
 
-    private void Awake()
+    private InteractionSystem()
     {
-        if (instance != null)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-        instance = this;
     }
 
     public static InteractionSystem GetInstance()
     {
-        if (instance != null)
-            return instance;
-        throw new System.Exception("InteractionSystem: Instance is null and got called");
+        if (instance == null)
+            instance = new InteractionSystem();
+        return instance;
     }
 
     public void SetCurrentInteractableObject(Interactable interactable)
@@ -37,7 +30,7 @@ public class InteractionSystem : MonoBehaviour
 
     public void EnterInteraction()
     {
-        if (currentIntractableObject != null)
+        if (currentIntractableObject != null && !currentIntractableObject.IsInteractionLock())
             currentIntractableObject.Interact();
     }
 }
