@@ -13,7 +13,7 @@ public class CharacterMovement : MonoBehaviour
         
     void Update()
     {
-        if (isDead)
+        if (isDead || GameManager.GetInstance().IsGamePaused())
             return;
 
         horizontalInput = Input.GetAxis("Horizontal");

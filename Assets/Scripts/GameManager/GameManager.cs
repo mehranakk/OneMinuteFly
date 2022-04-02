@@ -121,6 +121,11 @@ public class GameManager : MonoBehaviour
         isGamePaused = false;
     }
 
+    public bool IsGamePaused()
+    {
+        return isGamePaused;
+    }
+
     public static GameManager GetInstance()
     {
         return instance;
