@@ -43,8 +43,7 @@ public class GameManager : MonoBehaviour
     {
         if (!isGamePaused && lifeTimer <= 0)
         {
-            isGamePaused = true;
-            CurrentFlyDied();
+            KillFly();
         }
     }
 
@@ -61,13 +60,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void KillFly()
+    {
+        isGamePaused = true;
+        CurrentFlyDied();
+    }
+
     private void CurrentFlyDied()
     {
         player.GetComponent<CharacterMovement>().Die();
         if (checkpointFlower == null)
         {
             GameOver();
-        } else
+        }
+        else
         {
             StartCoroutine(WaitAndStartGameFromCheckPoint());
         }
@@ -173,7 +179,6 @@ public class GameManager : MonoBehaviour
         canvas = GameObject.Find("Canvas");
         lifeTimeUI = canvas.transform.Find("LifeTimer").GetComponent<TextMeshProUGUI>();
         helpTextUI = canvas.transform.Find("HelpText").gameObject;
-
     }
 
     private void OnDestroy()

@@ -135,7 +135,10 @@ public class CharacterMovement : MonoBehaviour
 
     IEnumerator WaitAndDeactive()
     {
-        yield return new WaitForSeconds(2f);
+        speed = Vector2.zero;
+
+        yield return new WaitForSeconds(1.2f);
+
         this.gameObject.SetActive(false);
     }
 
