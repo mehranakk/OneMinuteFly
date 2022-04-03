@@ -54,7 +54,7 @@
 			"entityInstances": [
 				{
 					"__identifier": "Flower",
-					"__grid": [24,4],
+					"__grid": [24,3],
 					"__pivot": [0.5,0.5],
 					"__tags": [],
 					"__tile": null,
@@ -63,7 +63,7 @@
 					"width": 16,
 					"height": 16,
 					"defUid": 144,
-					"px": [392,72],
+					"px": [392,56],
 					"fieldInstances": [
 						{ "__identifier": "Size", "__value": 1, "__type": "Int", "__tile": null, "defUid": 147, "realEditorValues": [] },
 						{ "__identifier": "Color", "__value": "#FF0000", "__type": "Color", "__tile": null, "defUid": 148, "realEditorValues": [] }
@@ -71,24 +71,7 @@
 				},
 				{
 					"__identifier": "Flower",
-					"__grid": [7,11],
-					"__pivot": [0.5,0.5],
-					"__tags": [],
-					"__tile": null,
-					"__smartColor": "#FF0000",
-					"iid": "9213c8b0-8dc0-11ec-8b4e-0f859fe44170",
-					"width": 16,
-					"height": 16,
-					"defUid": 144,
-					"px": [120,184],
-					"fieldInstances": [
-						{ "__identifier": "Size", "__value": 1, "__type": "Int", "__tile": null, "defUid": 147, "realEditorValues": [] },
-						{ "__identifier": "Color", "__value": "#FF0000", "__type": "Color", "__tile": null, "defUid": 148, "realEditorValues": [] }
-					]
-				},
-				{
-					"__identifier": "Flower",
-					"__grid": [24,28],
+					"__grid": [24,27],
 					"__pivot": [0.5,0.5],
 					"__tags": [],
 					"__tile": null,
@@ -97,7 +80,7 @@
 					"width": 16,
 					"height": 16,
 					"defUid": 144,
-					"px": [392,456],
+					"px": [392,440],
 					"fieldInstances": [
 						{ "__identifier": "Size", "__value": 1, "__type": "Int", "__tile": null, "defUid": 147, "realEditorValues": [] },
 						{ "__identifier": "Color", "__value": "#FF0000", "__type": "Color", "__tile": null, "defUid": 148, "realEditorValues": [] }

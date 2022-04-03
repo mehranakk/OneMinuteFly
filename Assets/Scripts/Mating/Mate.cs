@@ -13,10 +13,14 @@ public class Mate : Interactable
     [SerializeField] private float followDistance = 2;
     [SerializeField] private float velocity = 4;
 
+     private GameObject matingHeaert;
+    private bool matingHeartHappend = false;
+
     protected void Awake()
     {
         base.Awake();
         mateAnimator = GetComponent<Animator>();
+        matingHeaert = transform.Find("MatingHeart").gameObject;
     }
 
     private void OnEnable()
@@ -44,7 +48,9 @@ public class Mate : Interactable
             return;
         else if (matingFlower != null)
         {
-            if (Vector2.Distance(transform.position, matingFlower.transform.position) < 0.01)
+            Vector2 flowerHeadPos = matingFlower.transform.position;
+            flowerHeadPos.y += 0.2f;
+            if (Vector2.Distance(transform.position, flowerHeadPos) < 0.01)
             {
                 InFlower();
             }
@@ -94,6 +100,7 @@ public class Mate : Interactable
     {
         mateAnimator.SetBool("IsFlying", true);
         Vector2 direction = (matingFlower.transform.position - transform.position);
+        direction.y += 0.2f;
         transform.Translate(direction * velocity * Time.deltaTime);
         if (direction.x > 0)
             Flip(1);
@@ -104,6 +111,23 @@ public class Mate : Interactable
     private void InFlower()
     {
         mateAnimator.SetBool("IsFlying", false);
+        if (!matingHeartHappend)
+        {
+            Vector2 matingHeartPos = (transform.position + GameManager.GetInstance().GetPlayer().transform.position) / 2;
+            matingHeartPos.y += 0.7f;
+            matingHeaert.transform.position = matingHeartPos;
+            StartCoroutine(Mating());
+            matingHeartHappend = true;
+        }
+    }
+
+    IEnumerator Mating()
+    {
+        matingHeaert.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        matingHeaert.SetActive(false);
+        GameManager.GetInstance().GetPlayer().GetComponent<CharacterMovement>().EndMating();
+        GameManager.GetInstance().UnpauseMainGame();
     }
 
     public void MateInFlower(GameObject flower)
