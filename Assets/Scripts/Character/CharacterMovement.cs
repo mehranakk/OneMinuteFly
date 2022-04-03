@@ -49,11 +49,13 @@ public class CharacterMovement : MonoBehaviour
         if (facing == 1 && speed.x < 0)
         {
             characterAnimator.SetTrigger("Turn");
+            characterAnimator.ResetTrigger("TurnFlip");
             isTurning = true;
         }
         else if (facing == -1 && speed.x > 0)
         {
             characterAnimator.SetTrigger("TurnFlip");
+            characterAnimator.ResetTrigger("Turn");
             isTurning = true;
         } 
         //if (!isTurning) { 
