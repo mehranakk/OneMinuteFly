@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     private Camera camera;
 
     private GameObject canvas;
+    [SerializeField] private int lifeTime;
     private int lifeTimer;
     private TextMeshProUGUI lifeTimeUI;
     private GameObject helpTextUI;
@@ -162,7 +163,7 @@ public class GameManager : MonoBehaviour
 
     private void ResetLifeTimer()
     {
-        lifeTimer = 230;
+        lifeTimer = lifeTime;
     }
 
     private void InitCanvas()

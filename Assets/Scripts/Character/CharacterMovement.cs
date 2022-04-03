@@ -89,13 +89,14 @@ public class CharacterMovement : MonoBehaviour
     public void Die()
     {
         Debug.Log("Player Died");
+        characterAnimator.SetTrigger("Death");
         isDead = true;
         StartCoroutine(WaitAndDeactive());
     }
 
     IEnumerator WaitAndDeactive()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         this.gameObject.SetActive(false);
     }
 
