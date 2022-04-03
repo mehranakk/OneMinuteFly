@@ -29,14 +29,15 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
+        DontDestroyOnLoad(this);
         instance = this;
         SceneManager.sceneLoaded += OnSceneLoad;
-        InitAll();
+        isGamePaused = true;
+        //InitAll();
     }
 
     private void Start()
     {
-        StartCoroutine(UpdateTime());
     }
 
     private void Update()
@@ -139,10 +140,44 @@ public class GameManager : MonoBehaviour
         checkpointFlower = flower;
     }
 
-    private void OnSceneLoad(Scene scene, LoadSceneMode arg1)
+    public void StartNewGame()
     {
+        LoadScene(1);
     }
 
+    public void LoadScene(int sceneBuildIndex)
+    {
+        StartCoroutine(AsyncLoadScene(sceneBuildIndex));
+    }
+
+    private IEnumerator AsyncLoadScene(int sceneBuildIndex)
+    {
+        //loadingScreen.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, 0);
+        //loadingScreen.SetActive(true);
+        isGamePaused = true;
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneBuildIndex);
+        asyncLoad.allowSceneActivation = false;
+
+        while (asyncLoad.progress < 0.9f)
+        {
+            yield return null;
+        }
+
+        asyncLoad.allowSceneActivation = true;
+    }
+
+    private void OnSceneLoad(Scene scene, LoadSceneMode mode)
+    {
+        // main menu
+        if (scene.buildIndex != 0)
+        {
+            InitAll();
+            StartCoroutine(UpdateTime());
+            isGamePaused = false;
+        }
+        //loadingScreen.SetActive(false);
+    }
     public GameObject GetPlayer()
     {
         return player;

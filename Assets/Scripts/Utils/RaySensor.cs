@@ -67,7 +67,7 @@ public class RaySensor : MonoBehaviour
 
             if (hits)
             {
-                Debug.Log(string.Format("Raycast {0} hits {1} by distance {2}", label, hits.collider.transform.name, hits.distance));
+                //Debug.Log(string.Format("Raycast {0} hits {1} by distance {2}", label, hits.collider.transform.name, hits.distance));
                 firstHitLayer = LayersUtils.LayerNumberToLayerEnum(hits.collider.gameObject.layer);
             }
 
