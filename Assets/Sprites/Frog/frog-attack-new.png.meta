@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 8ae56357511ef466383df602adb49dd1
+guid: 50ec97dc817a94da3a4489b431c96213
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1173278175954788244
-    second: frog-idle_0
+      213: -8126643107529025421
+    second: frog-attack-new_0
   - first:
-      213: -8187977713618788960
-    second: frog-idle_1
+      213: 7930192075535524435
+    second: frog-attack-new_1
   - first:
-      213: -1719131803800926958
-    second: frog-idle_2
+      213: -7252524038640437447
+    second: frog-attack-new_2
   - first:
-      213: -7671692531416045113
-    second: frog-idle_3
+      213: 7985668531373367362
+    second: frog-attack-new_3
+  - first:
+      213: 3959977486960871457
+    second: frog-attack-new_4
+  - first:
+      213: -7132201120339410622
+    second: frog-attack-new_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: frog-idle_0
+      name: frog-attack-new_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,41 +123,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c602f7b17bda7bfe0800000000000000
-      internalID: -1173278175954788244
+      spriteID: 3781b57862d583f80800000000000000
+      internalID: -8126643107529025421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frog-idle_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0addfe6b6a57e5e80800000000000000
-      internalID: -8187977713618788960
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: frog-idle_2
+      name: frog-attack-new_1
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +144,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2158e589bba6428e0800000000000000
-      internalID: -1719131803800926958
+      spriteID: 352a9ee3da3bd0e60800000000000000
+      internalID: 7930192075535524435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frog-idle_3
+      name: frog-attack-new_2
       rect:
         serializedVersion: 2
-        x: 192
+        x: 256
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,8 +165,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c9edeef94ca88590800000000000000
-      internalID: -7671692531416045113
+      spriteID: 937fad7ffcbd95b90800000000000000
+      internalID: -7252524038640437447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frog-attack-new_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 192
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240668a283bc2de60800000000000000
+      internalID: 7985668531373367362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frog-attack-new_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 192
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128c8d42b8aa4f630800000000000000
+      internalID: 3959977486960871457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frog-attack-new_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 192
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241c68b7ed4550d90800000000000000
+      internalID: -7132201120339410622
       vertices: []
       indices: 
       edges: []
