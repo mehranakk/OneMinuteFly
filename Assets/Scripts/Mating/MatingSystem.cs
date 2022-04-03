@@ -45,7 +45,6 @@ public class MatingSystem
         Debug.Log("unlocking flowers");
         foreach (Flower f in flowers)
         {
-            Debug.Log("flower unlocked: " + f.gameObject.name);
             f.UnlockInteraction();
         }
             

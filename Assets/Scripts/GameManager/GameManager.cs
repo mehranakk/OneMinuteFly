@@ -162,7 +162,7 @@ public class GameManager : MonoBehaviour
 
     private void ResetLifeTimer()
     {
-        lifeTimer = 30;
+        lifeTimer = 230;
     }
 
     private void InitCanvas()

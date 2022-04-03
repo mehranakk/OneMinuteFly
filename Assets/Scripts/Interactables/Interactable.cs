@@ -8,7 +8,7 @@ public class Interactable: MonoBehaviour
     protected GameObject messageGameObject;
     protected bool isInteractionLock;
 
-    private void Awake()
+    protected void Awake()
     {
         messageGameObject = transform.Find("InteractMessage").gameObject;
         if (messageGameObject.activeSelf)
@@ -36,7 +36,7 @@ public class Interactable: MonoBehaviour
         return this.isInteractionLock;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (!isInteractionLock)
         {
@@ -45,7 +45,7 @@ public class Interactable: MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    protected virtual void OnTriggerExit2D(Collider2D collision)
     {
         if (!isInteractionLock)
         {

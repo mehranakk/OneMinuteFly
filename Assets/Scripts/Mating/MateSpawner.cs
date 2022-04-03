@@ -19,7 +19,6 @@ public class MateSpawner : MonoBehaviour
     private Vector3 FindSpawnPoint()
     {
         int randIndex = Random.Range(0, MatingSystem.spawnPoints.Count);
-        Debug.Log(randIndex);
         return MatingSystem.spawnPoints[randIndex];
     }
 }
