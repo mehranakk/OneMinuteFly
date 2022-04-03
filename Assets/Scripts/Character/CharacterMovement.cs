@@ -7,12 +7,14 @@ public class CharacterMovement : MonoBehaviour
     private float horizontalInput, verticalInput;
 
     private Animator characterAnimator;
+    private RayCaster raycaster;
 
     [SerializeField] private float velocity;
     private Vector2 speed;
     private int facing = 1;
-    private int shouldFace = 1;
     private bool isTurning = false;
+
+    private bool isRightBlock, isLeftBlock, isUpBlock, isDownBlock;
 
     private bool isDead = false;
     public bool isInLove = false;
@@ -21,6 +23,7 @@ public class CharacterMovement : MonoBehaviour
     private void Awake()
     {
         characterAnimator = GetComponent<Animator>();
+        raycaster = transform.Find("Raycaster").GetComponent<RayCaster>();
     }
 
     void Update()
@@ -28,17 +31,13 @@ public class CharacterMovement : MonoBehaviour
         if (isDead || GameManager.GetInstance().IsGamePaused())
             return;
 
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-        speed = new Vector2(horizontalInput * velocity, verticalInput * velocity);
+        raycaster.CastAll();
+        SetDirectionBlocks();
 
-        if (horizontalInput != 0 || verticalInput != 0)
-            TaskController.GetInstance().DoneTask(TaskController.TasksEnum.FLY);
+        HandleMove();
 
         if (Input.GetKeyDown(KeyCode.F))
             InteractionSystem.GetInstance().EnterInteraction();
-
-        transform.Translate(speed * Time.deltaTime);
 
 
         if (isInLove)
@@ -58,14 +57,12 @@ public class CharacterMovement : MonoBehaviour
             characterAnimator.ResetTrigger("Turn");
             isTurning = true;
         } 
-        //if (!isTurning) { 
-            if (Vector2.SqrMagnitude(speed) > 0)
-                characterAnimator.SetBool("IsFlying", true);
-            else
-                characterAnimator.SetBool("IsFlying", false);
-        //}
+        if (Vector2.SqrMagnitude(speed) > 0)
+            characterAnimator.SetBool("IsFlying", true);
+        else
+            characterAnimator.SetBool("IsFlying", false);
 
-        // We don't change should facing on zero
+        // We don't change facing on zero
         if (speed.x > 0)
             facing = 1;
         else if (speed.x < 0)
@@ -80,10 +77,43 @@ public class CharacterMovement : MonoBehaviour
         }*/
     }
 
-    private void Flip(int facing)
+    private void LateUpdate()
     {
-        transform.localScale = new Vector3(facing, 1, 1);
-        this.facing = facing;
+        transform.Translate(speed * Time.deltaTime);
+    }
+
+    private void SetDirectionBlocks()
+    {
+        isRightBlock = isLeftBlock = isUpBlock = isDownBlock = false;
+        foreach (RaySensor ray in raycaster.GetByTag("RIGHT"))
+            if (ray.isContacted)
+                isRightBlock = true;
+
+        foreach (RaySensor ray in raycaster.GetByTag("LEFT"))
+            if (ray.isContacted)
+                isLeftBlock = true;
+
+        foreach (RaySensor ray in raycaster.GetByTag("UP"))
+            if (ray.isContacted)
+                isUpBlock = true;
+
+        foreach (RaySensor ray in raycaster.GetByTag("DOWN"))
+            if (ray.isContacted)
+                isDownBlock = true;
+    }
+
+    private void HandleMove()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+        Vector2 normalizedInput = new Vector2(horizontalInput, verticalInput).normalized;
+        speed = normalizedInput * velocity;
+
+        speed.x = (speed.x > 0 && isRightBlock) || (speed.x < 0 && isLeftBlock) ? 0 : speed.x;
+        speed.y = (speed.y > 0 && isUpBlock) || (speed.y < 0 && isDownBlock) ? 0 : speed.y;
+
+        if (horizontalInput != 0 || verticalInput != 0)
+            TaskController.GetInstance().DoneTask(TaskController.TasksEnum.FLY);
     }
 
     public void Die()

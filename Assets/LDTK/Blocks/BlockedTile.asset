@@ -15,6 +15,6 @@ MonoBehaviour:
   _colliderType: 2
   _customPhysicsSprite: {fileID: 0}
   _tilemapTag: Untagged
-  _tilemapLayerMask: 0
+  _tilemapLayerMask: 4
   _physicsMaterial: {fileID: 0}
   _gameObject: {fileID: 0}
