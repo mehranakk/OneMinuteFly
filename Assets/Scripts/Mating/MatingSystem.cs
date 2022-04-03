@@ -69,7 +69,7 @@ public class MatingSystem
         followingMate.GetComponent<Mate>().MateInFlower(flower);
         GameManager.GetInstance().SetCheckpointFlower(flower);
 
-        followingMate.GetComponent<Mate>().DestroySelf();
+        //followingMate.GetComponent<Mate>().DestroySelf();
 
         followingMate = null;
         foreach (Flower f in flowers)
@@ -79,6 +79,13 @@ public class MatingSystem
         helpText.SetActive(false);
 
         spawner.SpawnMate();
+    }
+
+    public static void KillMatedMates()
+    {
+        foreach (Mate mate in mates)
+            if (mate.alreadyMated)
+                mate.DestroySelf();
     }
 
 }

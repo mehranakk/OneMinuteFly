@@ -110,12 +110,21 @@ public class Mate : Interactable
     {
         matingFlower = flower;
         alreadyMated = true;
+
+        mateAnimator.SetTrigger("Flower");
     }
 
     public void DestroySelf()
     {
+        StartCoroutine(WaitAndDestroy());
+    }
+
+    IEnumerator WaitAndDestroy()
+    {
+        yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
     }
+
     private void Flip(int facing)
     {
         transform.localScale = new Vector3(facing, 1, 1);

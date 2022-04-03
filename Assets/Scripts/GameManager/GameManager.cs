@@ -75,6 +75,8 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitAndStartGameFromCheckPoint()
     {
+        MatingSystem.KillMatedMates();
+
         yield return new WaitForSeconds(1.1f);
 
         SpawnPlayerAt(checkpointFlower);
