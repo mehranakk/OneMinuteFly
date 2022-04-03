@@ -44,6 +44,8 @@ public class BouncerFly : Interactable
     {
         Debug.Log("Interact with bouncer fly");
 
+        player = GameManager.GetInstance().GetPlayer();
+
         if (player.GetComponent<InventoryController>().GetCoin(1))
         {
             Debug.Log("fly can join the party");
