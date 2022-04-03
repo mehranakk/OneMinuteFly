@@ -31,11 +31,27 @@ public class BouncerFly : Interactable
         {
             MoveToPlayer();
         }
+
+        if (playerDistanceToPartyCenter > 5f)
+        {
+            bouncerAnimator.SetBool("ShouldBlock", false);
+        }
+
+        
     }
 
     public override void Interact()
     {
         Debug.Log("Interact with bouncer fly");
+
+        if (player.GetComponent<InventoryController>().GetCoin(1))
+        {
+            Debug.Log("fly can join the party");
+        }
+        else
+        {
+            bouncerAnimator.SetBool("ShouldBlock", true);
+        }
     }
 
     public void Block()

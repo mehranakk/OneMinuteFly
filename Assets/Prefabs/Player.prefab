@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 6634626168589562765}
   - component: {fileID: 6634626168589562762}
   - component: {fileID: 6634626168589562763}
+  - component: {fileID: -2736769605002553998}
   - component: {fileID: 6634626168589562764}
   - component: {fileID: 6634626168589562767}
   - component: {fileID: 7209590619966014093}
@@ -316,6 +317,18 @@ MonoBehaviour:
   velocity: 5
   isInLove: 0
   isInShock: 0
+--- !u!114 &-2736769605002553998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6634626168589562760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19af72c2efbeb4013bea4efd9c32ee6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &6634626168589562764
 BoxCollider2D:
   m_ObjectHideFlags: 0
