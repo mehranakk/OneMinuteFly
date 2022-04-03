@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2461398342458401589}
   - component: {fileID: 230204079491893356}
-  m_Layer: 0
+  - component: {fileID: -3064069469241822200}
+  m_Layer: 9
   m_Name: PartyPlaceHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,4 +51,20 @@ MonoBehaviour:
   - {fileID: 7953016107648383210, guid: 87226eb69dee043dbb3bd9c68193bc17, type: 3}
   - {fileID: 2789900295363707215, guid: e46b08dd1cf48432198050f3edb2f257, type: 3}
   - {fileID: 6094061319304927520, guid: 9094c98e78a764271b1c1cb6f933284c, type: 3}
-  partySize: 0
+  bouncerPrefab: {fileID: 7249638212785137778, guid: 6a51c23c6a2584d47bec2633bd5d106c, type: 3}
+--- !u!58 &-3064069469241822200
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461398342458401591}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4

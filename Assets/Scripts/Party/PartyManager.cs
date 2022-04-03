@@ -9,10 +9,10 @@ public class PartyManager : MonoBehaviour
 
     private int partySize;
 
-    //[SerializeField] private GameObject bouncerPrefab;
-    //private GameObject bouncerFly;
+    [SerializeField] private GameObject bouncerPrefab;
+    private GameObject bouncerFly;
+    private GameObject player;
 
-    // Start is called before the first frame update
     void Start()
     {
         partySize = GetComponent<LDtkFields>().GetInt("Size");
@@ -30,7 +30,8 @@ public class PartyManager : MonoBehaviour
                 partyFly.GetComponent<PartyFly>().Flip();
         }
 
-        //bouncerFly = Instantiate(bouncerPrefab, transform.position, Quaternion.identity);
+        bouncerFly = Instantiate(bouncerPrefab, transform.position, Quaternion.identity);
+        bouncerFly.GetComponent<BouncerFly>().SetPartyCenter(transform.position);
     }
 
 }

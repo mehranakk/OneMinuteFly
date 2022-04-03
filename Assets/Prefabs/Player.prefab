@@ -53,7 +53,7 @@ MonoBehaviour:
   awareDistance: 5
   layerMask:
     serializedVersion: 2
-    m_Bits: 16
+    m_Bits: 528
 --- !u!1 &1404984617772182290
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   awareDistance: 5
   layerMask:
     serializedVersion: 2
-    m_Bits: 16
+    m_Bits: 528
 --- !u!1 &4358532844110812579
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
   awareDistance: 5
   layerMask:
     serializedVersion: 2
-    m_Bits: 16
+    m_Bits: 528
 --- !u!1 &6634626168589562760
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,4 +435,4 @@ MonoBehaviour:
   awareDistance: 5
   layerMask:
     serializedVersion: 2
-    m_Bits: 16
+    m_Bits: 528
