@@ -93,7 +93,6 @@ public class GameManager : MonoBehaviour
         MatingSystem.GetInstance().Reset();
 
         ResetLifeTimer();
-        isGamePaused = false;
     }
 
     private void GameOver()
@@ -103,7 +102,9 @@ public class GameManager : MonoBehaviour
 
     private void SpawnPlayerAt(GameObject flower)
     {
-        GameObject newPlayer = Instantiate(playerPrefab, flower.transform.position, Quaternion.identity);
+        Vector2 spawnPos = flower.transform.position;
+        spawnPos.y += 1.3f;
+        GameObject newPlayer = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
         player = newPlayer;
     }
 
@@ -180,7 +181,7 @@ public class GameManager : MonoBehaviour
         {
             InitAll();
             StartCoroutine(UpdateTime());
-            isGamePaused = false;
+            //isGamePaused = false;
         }
         //loadingScreen.SetActive(false);
     }

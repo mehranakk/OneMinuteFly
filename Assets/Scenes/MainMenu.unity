@@ -968,7 +968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 6634626168589562760, guid: cdf861e281ca70e49b40dcdd44547a32, type: 3}
-  lifeTime: 20
+  lifeTime: 120
 --- !u!4 &716027788
 Transform:
   m_ObjectHideFlags: 0

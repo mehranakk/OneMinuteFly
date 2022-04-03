@@ -17,8 +17,12 @@ public class CharacterMovement : MonoBehaviour
     private bool isRightBlock, isLeftBlock, isUpBlock, isDownBlock;
 
     private bool isDead = false;
+    private bool isReborning = true;
     public bool isInLove = false;
     public bool isInShock = false;
+
+    private bool isMating = false;
+    private GameObject matingFlower;
 
     private void Awake()
     {
@@ -28,8 +32,17 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        if (isDead || GameManager.GetInstance().IsGamePaused())
+        if (isMating)
+        {
+            GoToFlowerForMating();
             return;
+        }
+
+        if (isDead || isReborning || GameManager.GetInstance().IsGamePaused())
+        {
+            speed = Vector2.zero;
+            return;
+        }
 
         raycaster.CastAll();
         SetDirectionBlocks();
@@ -125,6 +138,30 @@ public class CharacterMovement : MonoBehaviour
             TaskController.GetInstance().DoneTask(TaskController.TasksEnum.FLY);
     }
 
+    private void GoToFlowerForMating()
+    {
+        Vector2 targetPosition = matingFlower.transform.position;
+        targetPosition.y += 0.2f;
+        if (Vector2.Distance(transform.position, targetPosition) < 0.35)
+        {
+            speed = Vector2.zero;
+            return;
+        }
+        speed = velocity * (targetPosition - (Vector2)transform.position).normalized;
+    }
+
+    public void SetMatingFlower(GameObject flower)
+    {
+        isMating = true;
+        matingFlower = flower;
+    }
+
+    public void EndMating()
+    {
+        isMating = false;
+        matingFlower = null;
+    }
+
     public void Die()
     {
         Debug.Log("Player Died");
@@ -163,5 +200,12 @@ public class CharacterMovement : MonoBehaviour
     public void EndTurningFlip()
     {
         isTurning = false;
+    }
+
+    //Animation Event
+    public void EndReborning()
+    {
+        isReborning = false;
+        GameManager.GetInstance().UnpauseMainGame();
     }
 }

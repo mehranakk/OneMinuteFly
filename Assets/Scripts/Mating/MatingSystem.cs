@@ -66,8 +66,10 @@ public class MatingSystem
 
     public void DoMateInFlower(GameObject flower)
     {
+        GameManager.GetInstance().PauseMainGame();
         followingMate.GetComponent<Mate>().MateInFlower(flower);
         GameManager.GetInstance().SetCheckpointFlower(flower);
+        GameManager.GetInstance().GetPlayer().GetComponent<CharacterMovement>().SetMatingFlower(flower);
 
         //followingMate.GetComponent<Mate>().DestroySelf();
 
