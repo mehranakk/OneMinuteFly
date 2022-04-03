@@ -30,7 +30,7 @@ public class WishListUI : MonoBehaviour
             GameObject newTaskUI = Instantiate(tasksUIPrefab, currentPosition, Quaternion.identity, scrollGameObject.transform);
             newTaskUI.GetComponent<TaskUI>().Init();
             newTaskUI.GetComponent<TaskUI>().SetTask(t);
-            currentPosition.y -= 0.4f;
+            currentPosition.y -= 0.7f;
         }
     }
 

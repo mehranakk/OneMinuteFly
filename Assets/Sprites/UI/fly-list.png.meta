@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: e8c628af41a3bd549bd0eb3b42b4fde3
+guid: dd9de449150c36d4fb68dc6b29f7382b
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 4455915625971755596
-    second: Checkbox_Empty
-  - first:
-      213: 9221389259124305472
-    second: Checkbox_Checked
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -47,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,49 +89,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Checkbox_Empty
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 0
-        width: 263
-        height: 360
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4aa82347a796dd30800000000000000
-      internalID: 4455915625971755596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Checkbox_Checked
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 0
-        width: 258
-        height: 360
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04ee4b59ca4f8ff70800000000000000
-      internalID: 9221389259124305472
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
