@@ -27,8 +27,11 @@ public class TaskController
 
     public void Init()
     {
-        tasks.Add(TasksEnum.FLY, new Task("Fly for the first time"));
-        tasks.Add(TasksEnum.POOP, new Task("Poop for the first time"));
+        if (tasks.Count == 0)
+        {
+            tasks.Add(TasksEnum.FLY, new Task("Fly for the first time"));
+            tasks.Add(TasksEnum.POOP, new Task("Poop for the first time"));
+        }
     }
 
     public void DoneTask(TasksEnum taskEnum)

@@ -7,6 +7,6 @@ public class ExitToMainMenuButton: Button
 {
     protected override void OnClicked()
     {
-        //GameManager.instance.LoadScene(0);
+        GameManager.GetInstance().LoadScene(0);
     }
 }

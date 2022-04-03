@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     private int lifeTimer;
     private TextMeshProUGUI lifeTimeUI;
     private GameObject helpTextUI;
+    private GameObject dieMenu;
+
+    private GameObject loadingScreen;
 
     private void Awake()
     {
@@ -31,6 +34,8 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(this);
         instance = this;
+
+        loadingScreen = transform.Find("LoadingScreen").gameObject;
         SceneManager.sceneLoaded += OnSceneLoad;
         isGamePaused = true;
         //InitAll();
@@ -98,6 +103,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         Debug.Log("GameOver");
+        dieMenu.SetActive(true);
     }
 
     private void SpawnPlayerAt(GameObject flower)
@@ -152,6 +158,12 @@ public class GameManager : MonoBehaviour
         LoadScene(1);
     }
 
+    public void Retry()
+    {
+        Debug.Log("Retry");
+        LoadScene(1);
+    }    
+
     public void LoadScene(int sceneBuildIndex)
     {
         StartCoroutine(AsyncLoadScene(sceneBuildIndex));
@@ -159,8 +171,8 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator AsyncLoadScene(int sceneBuildIndex)
     {
-        //loadingScreen.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, 0);
-        //loadingScreen.SetActive(true);
+        loadingScreen.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, 0);
+        loadingScreen.SetActive(true);
         isGamePaused = true;
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneBuildIndex);
@@ -183,7 +195,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(UpdateTime());
             //isGamePaused = false;
         }
-        //loadingScreen.SetActive(false);
+        loadingScreen.SetActive(false);
     }
     public GameObject GetPlayer()
     {
@@ -215,10 +227,11 @@ public class GameManager : MonoBehaviour
         canvas = GameObject.Find("Canvas");
         lifeTimeUI = canvas.transform.Find("LifeTimer").GetComponent<TextMeshProUGUI>();
         helpTextUI = canvas.transform.Find("HelpText").gameObject;
+        dieMenu = canvas.transform.Find("DieMenu").gameObject;
     }
 
     private void OnDestroy()
     {
-        SceneManager.sceneLoaded -= OnSceneLoad;
+        //SceneManager.sceneLoaded -= OnSceneLoad;
     }
 }

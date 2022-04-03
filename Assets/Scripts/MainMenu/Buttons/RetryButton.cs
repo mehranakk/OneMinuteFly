@@ -7,6 +7,6 @@ public class RetryButton : Button
 {
     protected override void OnClicked()
     {
-        //GameManager.instance.Retry();
+        GameManager.GetInstance().Retry();
     }
 }
