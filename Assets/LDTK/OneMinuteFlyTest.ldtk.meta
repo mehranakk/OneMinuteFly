@@ -13,9 +13,9 @@ ScriptedImporter:
   _atlas: {instanceID: 0}
   _customLevelPrefab: {instanceID: 0}
   _deparentInRuntime: 0
-  _intGridValueColorsVisible: 0
+  _intGridValueColorsVisible: 1
   _useCompositeCollider: 1
-  _createBackgroundColor: 0
+  _createBackgroundColor: 1
   _intGridValues:
   - _key: IntGrid_1
     _asset: {instanceID: 0}
@@ -28,8 +28,12 @@ ScriptedImporter:
   _entities:
   - _key: Flower
     _asset: {fileID: 1917626902447448063, guid: 4df6ca293e5ca4d7784a841ddf7a0c71, type: 3}
-  - _key: SpawnPoint
+  - _key: MateSpawnPoint
     _asset: {fileID: 3006186227112272572, guid: 4c8fad0f92dae48919aadc8f1a406461, type: 3}
+  - _key: Frog
+    _asset: {fileID: 6327702273432456768, guid: 4d610991f59204be0a983cdf0447c432, type: 3}
+  - _key: Party
+    _asset: {fileID: 2461398342458401591, guid: 0829e008ef5e943d0909269b5969ccf1, type: 3}
   _enumGenerate: 0
   _enumPath: 
   _enumNamespace: 
