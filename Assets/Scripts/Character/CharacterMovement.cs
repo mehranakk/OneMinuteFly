@@ -80,6 +80,7 @@ public class CharacterMovement : MonoBehaviour
     private void LateUpdate()
     {
         transform.Translate(speed * Time.deltaTime);
+        AdjustSelf();
     }
 
     private void SetDirectionBlocks()
@@ -100,6 +101,14 @@ public class CharacterMovement : MonoBehaviour
         foreach (RaySensor ray in raycaster.GetByTag("DOWN"))
             if (ray.isContacted)
                 isDownBlock = true;
+    }
+
+    private void AdjustSelf()
+    {
+        Vector2 adjustment = MoveablePhysics.AdjustObject(raycaster);
+
+        if (adjustment.x != 0f || adjustment.y != 0f)
+            transform.Translate(adjustment);
     }
 
     private void HandleMove()
