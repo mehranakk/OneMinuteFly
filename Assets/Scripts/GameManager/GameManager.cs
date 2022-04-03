@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
 
     private bool isGamePaused = false;
+    private bool isTimerStarted = false;
 
     [SerializeField] GameObject playerPrefab;
     private GameObject player;
@@ -55,6 +56,10 @@ public class GameManager : MonoBehaviour
 
     IEnumerator UpdateTime()
     {
+        if (isTimerStarted)
+            yield break;
+
+        isTimerStarted = true;
         while (true)
         {
             while (!isGamePaused)
