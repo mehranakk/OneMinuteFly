@@ -69,7 +69,8 @@ public class AudioManager : MonoBehaviour
                     s.source.volume = s.volumeDefault * audiblePercentage;
                     s.source.panStereo = streo;
                 }
-                finally { }
+                catch (Exception exp) {}
+                finally {}
             }
 
             else

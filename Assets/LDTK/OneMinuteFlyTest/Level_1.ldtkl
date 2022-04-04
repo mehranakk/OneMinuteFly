@@ -227,7 +227,10 @@
 					"height": 16,
 					"defUid": 178,
 					"px": [512,320],
-					"fieldInstances": [{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 179, "realEditorValues": [] }]
+					"fieldInstances": [
+						{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 179, "realEditorValues": [] },
+						{ "__identifier": "Coins", "__value": 0, "__type": "Int", "__tile": null, "defUid": 183, "realEditorValues": [] }
+					]
 				},
 				{
 					"__identifier": "GarbageSpawnPoint",
@@ -241,7 +244,10 @@
 					"height": 16,
 					"defUid": 178,
 					"px": [528,368],
-					"fieldInstances": [{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 179, "realEditorValues": [] }]
+					"fieldInstances": [
+						{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 179, "realEditorValues": [] },
+						{ "__identifier": "Coins", "__value": 2, "__type": "Int", "__tile": null, "defUid": 183, "realEditorValues": [{ "id": "V_Int", "params": [2] }] }
+					]
 				},
 				{
 					"__identifier": "GarbageSpawnPoint",
@@ -255,7 +261,10 @@
 					"height": 16,
 					"defUid": 178,
 					"px": [480,352],
-					"fieldInstances": [{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 179, "realEditorValues": [] }]
+					"fieldInstances": [
+						{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 179, "realEditorValues": [] },
+						{ "__identifier": "Coins", "__value": 1, "__type": "Int", "__tile": null, "defUid": 183, "realEditorValues": [{ "id": "V_Int", "params": [1] }] }
+					]
 				},
 				{
 					"__identifier": "GarbageSpawnPoint",
@@ -269,7 +278,10 @@
 					"height": 16,
 					"defUid": 178,
 					"px": [560,336],
-					"fieldInstances": [{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 179, "realEditorValues": [] }]
+					"fieldInstances": [
+						{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 179, "realEditorValues": [] },
+						{ "__identifier": "Coins", "__value": 1, "__type": "Int", "__tile": null, "defUid": 183, "realEditorValues": [{ "id": "V_Int", "params": [1] }] }
+					]
 				},
 				{
 					"__identifier": "IceCream",

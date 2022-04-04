@@ -28,7 +28,7 @@ public class InventoryController
 
     public void Init()
     {
-        _coins = 10;
+        _coins = 0;
         hasIceCream = false;
     }
 

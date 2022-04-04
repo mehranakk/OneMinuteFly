@@ -22,7 +22,9 @@ public class GarbageSpawner : MonoBehaviour
             prefab = garbagePrefabs[garbageType];
         else
             prefab = garbagePrefabs[Random.Range(0, garbagePrefabs.Count)];
-        Instantiate(prefab, pos.transform.position, Quaternion.identity, transform);
+        GameObject newGarbage = Instantiate(prefab, pos.transform.position, Quaternion.identity, transform);
+
+        newGarbage.GetComponent<Garbage>().coins = pos.GetComponent<LDtkFields>().GetInt("Coins");
     }
 
     public GameObject FindSpawnPoint()
