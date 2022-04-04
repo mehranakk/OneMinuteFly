@@ -22,4 +22,9 @@ public class MainMenuSceneLoad : MonoBehaviour
             AudioManager.GetInstance().ChangeVolumeByName("main-menu", Mathf.InverseLerp(0, themeVolumeUpLerpTime, timer));
         }
     }
+
+    private void OnDisable()
+    {
+        AudioManager.GetInstance().StopAll();
+    }
 }

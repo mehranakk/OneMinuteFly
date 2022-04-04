@@ -298,8 +298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: theme
-    clip: {fileID: 8300000, guid: 4601905237e8848a1a5686a77826fbbe, type: 3}
+  - name: main-menu
+    clip: {fileID: 8300000, guid: e02a86d5a02e1429da786759cb0a7394, type: 3}
     volumeDefault: 1
     pitchDefault: 1
     loopDefault: 1
@@ -319,7 +319,7 @@ MonoBehaviour:
     maxDistance: 10
     reference: {fileID: 0}
   - name: jazz
-    clip: {fileID: 8300000, guid: f1434319867274bc2a417dfffda392c4, type: 3}
+    clip: {fileID: 8300000, guid: 334beec45304b4573acd2f73ef9c5022, type: 3}
     volumeDefault: 1
     pitchDefault: 1
     loopDefault: 0

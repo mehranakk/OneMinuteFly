@@ -235,6 +235,7 @@ public class CharacterMovement : MonoBehaviour
         characterAnimator.SetTrigger("Death");
         isDead = true;
         StartCoroutine(WaitAndDeactive());
+        AudioManager.GetInstance().StopAll();
     }
 
     IEnumerator WaitAndDeactive()
