@@ -2290,6 +2290,54 @@ MonoBehaviour:
     pitchDefault: 0.6
     loopDefault: 0
     source: {fileID: 0}
+  - name: dive
+    clip: {fileID: 8300000, guid: 91f6c8a70e4ab42038aa94b848dbf817, type: 3}
+    volumeDefault: 0.8
+    pitchDefault: 0.8
+    loopDefault: 0
+    source: {fileID: 0}
+  - name: party
+    clip: {fileID: 8300000, guid: b42326af0f8a04a3e8983c4811d0e47b, type: 3}
+    volumeDefault: 0.8
+    pitchDefault: 1
+    loopDefault: 1
+    source: {fileID: 0}
+  - name: ice-cream
+    clip: {fileID: 8300000, guid: 889cbd2822e6c4ae5b1ce2e0f7aee7eb, type: 3}
+    volumeDefault: 1
+    pitchDefault: 2
+    loopDefault: 1
+    source: {fileID: 0}
+  - name: pickup
+    clip: {fileID: 8300000, guid: 8eb129c683df74f0792f47d1ba0234ef, type: 3}
+    volumeDefault: 1
+    pitchDefault: 2
+    loopDefault: 0
+    source: {fileID: 0}
+  - name: coin
+    clip: {fileID: 8300000, guid: 3b1655db0fe514cfd8014cda74c64887, type: 3}
+    volumeDefault: 1
+    pitchDefault: 1.5
+    loopDefault: 0
+    source: {fileID: 0}
+  - name: bouncer-reject
+    clip: {fileID: 8300000, guid: 488b3ecb3b97148068ab97d54c17f974, type: 3}
+    volumeDefault: 0.7
+    pitchDefault: 1
+    loopDefault: 0
+    source: {fileID: 0}
+  - name: bouncer-accept
+    clip: {fileID: 8300000, guid: 4b04183d4fc1c41b2b244f8e6ed94be8, type: 3}
+    volumeDefault: 1
+    pitchDefault: 1
+    loopDefault: 0
+    source: {fileID: 0}
+  - name: yay
+    clip: {fileID: 8300000, guid: 35947e37a5c1b4c59a7f72bf3c108d67, type: 3}
+    volumeDefault: 1
+    pitchDefault: 1.5
+    loopDefault: 0
+    source: {fileID: 0}
 --- !u!4 &1713248603
 Transform:
   m_ObjectHideFlags: 0

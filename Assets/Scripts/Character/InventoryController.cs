@@ -63,9 +63,11 @@ public class InventoryController
         switch (pickUpItemEnum)
         {
             case PickUpItemsEnum.ICE_CREAM:
+                AudioManager.GetInstance().PlayByName("pickup", Vector3.zero);
                 hasIceCream = true;
                 break;
             case PickUpItemsEnum.COIN:
+                AudioManager.GetInstance().PlayByName("coin", Vector3.zero);
                 _coins += 1;
                 break;
         }

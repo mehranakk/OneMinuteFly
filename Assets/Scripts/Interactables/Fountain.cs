@@ -31,6 +31,8 @@ public class Fountain : Interactable
         player.HideCharacterSpriteRenderer();
         fountainAnimator.SetTrigger("Dive");
 
+        AudioManager.GetInstance().PlayByName("dive", transform.position, delay: 1);
+
         yield return new WaitForSeconds(2f);
 
         player.UnhideCharacterSpriteRenderer();

@@ -37,7 +37,7 @@ public class BeachSide : Interactable
         float playerDistance = distance.magnitude;
         float audiblePercentage = Mathf.InverseLerp(5, 1, playerDistance);
 
-        AudioManager.GetInstance().ChangeVolumeByName("seaside", 0.4f * audiblePercentage);
+        AudioManager.GetInstance().ChangeVolumeByName("seaside", 0.25f * audiblePercentage);
     }
 
     public override void Interact()
@@ -64,7 +64,11 @@ public class BeachSide : Interactable
         player.DisableAnimationFly();
         player.GetComponent<Animator>().SetTrigger("EatIceCream");
 
+        AudioManager.GetInstance().PlayByName("ice-cream", transform.position);
+
         yield return new WaitForSeconds(1.3f);
+
+        AudioManager.GetInstance().StopByName("ice-cream");
 
         InventoryController.GetInstance().UseIceCream();
         GameManager.GetInstance().UnpauseMainGame();

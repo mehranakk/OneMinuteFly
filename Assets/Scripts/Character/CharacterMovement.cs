@@ -175,6 +175,7 @@ public class CharacterMovement : MonoBehaviour
     {
         characterAnimator.SetTrigger("Party");
         GameManager.GetInstance().PauseMainGame();
+        AudioManager.GetInstance().PlayByName("yay", transform.position, delay: 1f);
         StartCoroutine(EnoughParty());
     }
 

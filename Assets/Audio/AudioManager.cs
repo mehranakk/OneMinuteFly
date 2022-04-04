@@ -60,12 +60,12 @@ public class AudioManager : MonoBehaviour
             }
     }
 
-    public void PlayByName(string name, Vector2 location)
+    public void PlayByName(string name, Vector2 location, float delay = 0)
     {
         try
         {
             Sound s = sounds.Find(sound => sound.name == name);
-            s.source.Play();
+            s.source.PlayDelayed(delay);
             Debug.Log(string.Format("Playing audio clip '{0}'", name));
         }
         catch (Exception exp)

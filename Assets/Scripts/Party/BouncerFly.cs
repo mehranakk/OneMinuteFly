@@ -62,6 +62,11 @@ public class BouncerFly : Interactable
             LockInteraction();
             GetComponentInParent<PartyManager>().EnterParty();
             Debug.Log("fly can join the party");
+            AudioManager.GetInstance().PlayByName("bouncer-accept", transform.position);
+        }
+        else
+        {
+            AudioManager.GetInstance().PlayByName("bouncer-reject", transform.position);
         }
     }
 
