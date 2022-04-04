@@ -240,7 +240,7 @@ public class CharacterMovement : MonoBehaviour
     {
         speed = Vector2.zero;
 
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(2f);
 
         this.gameObject.SetActive(false);
     }
