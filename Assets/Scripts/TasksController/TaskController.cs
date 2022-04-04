@@ -51,6 +51,14 @@ public class TaskController
         OnTaskDone?.Invoke(taskEnum);
     }
 
+    public bool AreAllTasksDone()
+    {
+        foreach (KeyValuePair<TaskController.TasksEnum, Task> entry in this.tasks)
+            if (!entry.Value.IsTaskDone())
+                return false;
+        return true;
+    }
+
     public Dictionary<TasksEnum, Task> GetTasks()
     {
         //return this.tasks.Values.ToList();
