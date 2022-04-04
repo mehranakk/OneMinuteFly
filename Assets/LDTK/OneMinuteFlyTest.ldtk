@@ -10,7 +10,7 @@
 	},
 	"jsonVersion": "1.1.0",
 	"appBuildId": 458005,
-	"nextUid": 182,
+	"nextUid": 183,
 	"identifierStyle": "Capitalize",
 	"worldLayout": "Free",
 	"worldGridWidth": 256,
@@ -1117,7 +1117,7 @@
 		{
 			"__cWid": 10,
 			"__cHei": 8,
-			"identifier": "Grass",
+			"identifier": "Grass2",
 			"uid": 1,
 			"relPath": "../Sprites/Tiles/Grass.png",
 			"embedAtlas": null,
@@ -1133,7 +1133,7 @@
 			"savedSelections": [],
 			"cachedPixelData": {
 				"opaqueTiles": "11111100001111110000000000000000000000000010000000000000000000000000000000000000",
-				"averageColors": "fbc7fbc7fbc7fbc6fbc6fcd70eea0ed700000000fbd7fbc7fbc7fcd7fcd7fbc70ab600000000000089b679b679b6a9b64ab64ab6ebc6ebc6dac6dac6bab6bac6dbc6bac64cd73cd7ebc6ebc6dac6dac6bab6dbc6fbc7dbc6fbc6fbc6dac6dac6dac6dac689b6bac6dbc6bac6fbc6fbc6dac6dac6dac6dac689b6bab6bab689b6aab6aab6fbc6fbc600000000ebc6ebc6fbc6fbc6aab6aab6fbc6fbc600000000"
+				"averageColors": "f676f676f676f675f675f6760898088600000000f676f676f676f676f676f6760565000000000000856575657565a56545654565e675e675d665d675b565b565d675b56547863786e675e675d665d675b565d675f676d675f675f675d675d675d675d6758565b565d675b565f675f675d675d675d675d6758565b565b5658565a565a565f675f67500000000e675e675f675f675a565a565f675f67500000000"
 			}
 		},
 		{
@@ -1177,13 +1177,13 @@
 			"savedSelections": [],
 			"cachedPixelData": {
 				"opaqueTiles": "1110000011100000000000000000000000100000000000000000000000000000",
-				"averageColors": "fecafecafeca6dc96dc96dc96dc91edbfecafecafeca6dc96dc91db80db90edb6dc96dc96dc900007dc97dc9eecaeeca2dc91dc96ec91dc97dc97dc9eecaeeca9dc96ec9feca6ec97dc97dc9cecaceca2dc91dc96ec91dc97dc97dc9cecaceca3dc92dc99dc92dc99dc99dc9cecaceca0000decaeecaeeca9dc99dc9cecaceca"
+				"averageColors": "f987f987f98769866986698669861a97f987f987f98769866986197509860a97698669866986000079867986e987e987298619866986198679867986e987e98799866986f987698679867986c987c987298619866986198679867986c987c987398629869986298699869986c987c9870000d987e987e98799869986c987c987"
 			}
 		},
 		{
 			"__cWid": 4,
 			"__cHei": 1,
-			"identifier": "Water",
+			"identifier": "Water2",
 			"uid": 132,
 			"relPath": "../Sprites/Tiles/Water.png",
 			"embedAtlas": null,
@@ -1197,64 +1197,7 @@
 			"enumTags": [],
 			"customData": [],
 			"savedSelections": [],
-			"cachedPixelData": { "opaqueTiles": "1111", "averageColors": "f9dbf9dbf9dbf9db" }
-		},
-		{
-			"__cWid": 3,
-			"__cHei": 3,
-			"identifier": "ZBlue",
-			"uid": 151,
-			"relPath": "../Sprites/Tiles/ZBlue.png",
-			"embedAtlas": null,
-			"pxWid": 48,
-			"pxHei": 48,
-			"tileGridSize": 16,
-			"spacing": 0,
-			"padding": 0,
-			"tags": ["Water"],
-			"tagsSourceEnumUid": null,
-			"enumTags": [],
-			"customData": [],
-			"savedSelections": [],
-			"cachedPixelData": null
-		},
-		{
-			"__cWid": 3,
-			"__cHei": 3,
-			"identifier": "ZGreen",
-			"uid": 153,
-			"relPath": "../Sprites/Tiles/ZGreen.png",
-			"embedAtlas": null,
-			"pxWid": 48,
-			"pxHei": 48,
-			"tileGridSize": 16,
-			"spacing": 0,
-			"padding": 0,
-			"tags": ["Grass"],
-			"tagsSourceEnumUid": null,
-			"enumTags": [],
-			"customData": [],
-			"savedSelections": [],
-			"cachedPixelData": null
-		},
-		{
-			"__cWid": 3,
-			"__cHei": 3,
-			"identifier": "ZYellow",
-			"uid": 164,
-			"relPath": "../Sprites/Tiles/ZYellow.png",
-			"embedAtlas": null,
-			"pxWid": 48,
-			"pxHei": 48,
-			"tileGridSize": 16,
-			"spacing": 0,
-			"padding": 0,
-			"tags": ["Dirt"],
-			"tagsSourceEnumUid": null,
-			"enumTags": [],
-			"customData": [],
-			"savedSelections": [],
-			"cachedPixelData": null
+			"cachedPixelData": { "opaqueTiles": "1111", "averageColors": "f387f387f387f387" }
 		}
 	], "enums": [{ "identifier": "Enum", "uid": 143, "values": [], "iconTilesetUid": 123, "externalRelPath": null, "externalFileChecksum": null, "tags": [] }], "externalEnums": [], "levelFields": [] },
 	"levels": [

@@ -1,31 +1,28 @@
 fileFormatVersion: 2
-guid: 8565177159ad74d6cbf6875ee2e91c67
+guid: ef4167d43256a472e966cebf6170fefa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -644326172017425314
-    second: bouncer-idle_0
+      213: 3100220867957210534
+    second: bouncer-money_0
   - first:
-      213: 6442000288344658964
-    second: bouncer-idle_1
+      213: 9090508130083647357
+    second: bouncer-money_1
   - first:
-      213: -4627293056914982116
-    second: bouncer-idle_2
+      213: -1648490597059298065
+    second: bouncer-money_2
   - first:
-      213: 9116300498417425876
-    second: bouncer-idle_3
+      213: -1903980394586377678
+    second: bouncer-money_3
   - first:
-      213: -1628083829583549464
-    second: bouncer-idle_4
+      213: 4173967658860162592
+    second: bouncer-money_4
   - first:
-      213: 5043662078133861780
-    second: bouncer-idle_5
+      213: 5090997399197046366
+    second: bouncer-money_5
   - first:
-      213: 2220760716568992917
-    second: bouncer-idle_6
-  - first:
-      213: -4269440964332118650
-    second: bouncer-idle_7
+      213: -5685861636207112795
+    second: bouncer-money_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -70,7 +67,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 57
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,7 +112,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bouncer-idle_0
+      name: bouncer-money_0
       rect:
         serializedVersion: 2
         x: 0
@@ -129,14 +126,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e540a65a2c4ee07f0800000000000000
-      internalID: -644326172017425314
+      spriteID: 6adb7d72472360b20800000000000000
+      internalID: 3100220867957210534
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bouncer-idle_1
+      name: bouncer-money_1
       rect:
         serializedVersion: 2
         x: 64
@@ -150,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4145fbd8125966950800000000000000
-      internalID: 6442000288344658964
+      spriteID: d7faf611bf8f72e70800000000000000
+      internalID: 9090508130083647357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bouncer-idle_2
+      name: bouncer-money_2
       rect:
         serializedVersion: 2
         x: 128
@@ -171,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1b73fe2b7d88cfb0800000000000000
-      internalID: -4627293056914982116
+      spriteID: fec75ba39826f19e0800000000000000
+      internalID: -1648490597059298065
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bouncer-idle_3
+      name: bouncer-money_3
       rect:
         serializedVersion: 2
         x: 192
@@ -192,14 +189,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dd13e9c00b938e70800000000000000
-      internalID: 9116300498417425876
+      spriteID: 232fe593be3b395e0800000000000000
+      internalID: -1903980394586377678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bouncer-idle_4
+      name: bouncer-money_4
       rect:
         serializedVersion: 2
         x: 256
@@ -213,14 +210,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8eb6d190262e769e0800000000000000
-      internalID: -1628083829583549464
+      spriteID: 02e245a9879ece930800000000000000
+      internalID: 4173967658860162592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bouncer-idle_5
+      name: bouncer-money_5
       rect:
         serializedVersion: 2
         x: 320
@@ -234,14 +231,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49df64600ffaef540800000000000000
-      internalID: 5043662078133861780
+      spriteID: e56d39b492bd6a640800000000000000
+      internalID: 5090997399197046366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bouncer-idle_6
+      name: bouncer-money_6
       rect:
         serializedVersion: 2
         x: 384
@@ -255,29 +252,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59c9c3a0b1ab1de10800000000000000
-      internalID: 2220760716568992917
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bouncer-idle_7
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68d9b7b3016efb4c0800000000000000
-      internalID: -4269440964332118650
+      spriteID: 5ad8ad387f2c711b0800000000000000
+      internalID: -5685861636207112795
       vertices: []
       indices: 
       edges: []
