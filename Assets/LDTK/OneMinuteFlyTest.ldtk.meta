@@ -43,7 +43,15 @@ ScriptedImporter:
   - _key: BeachSide
     _asset: {fileID: 2945690661540689468, guid: 4270f9adc7dc2e24c8eff0ccd693d01c, type: 3}
   - _key: IceCream
-    _asset: {fileID: 4165473090189274822, guid: e0a7a392225cc6449b482410d4728e46, type: 3}
+    _asset: {fileID: 3357348981393651221, guid: a00b72a9d38b5ac4a8e62bef7f7f03b9, type: 3}
+  - _key: Bush1
+    _asset: {fileID: 6813023158712096237, guid: bb3eee17325312241a563aea3fe30b6f, type: 3}
+  - _key: Bush2
+    _asset: {fileID: 6138093080145287490, guid: 010775c215e3b734cb138dbaa72cedd8, type: 3}
+  - _key: Trunk
+    _asset: {fileID: 819327318678757533, guid: f2b45922c28db6048888ca666890b68e, type: 3}
+  - _key: LampPole
+    _asset: {fileID: 3069516489554435510, guid: 6241ba83f5b79604386b54e2a1f8e572, type: 3}
   _enumGenerate: 0
   _enumPath: 
   _enumNamespace: 

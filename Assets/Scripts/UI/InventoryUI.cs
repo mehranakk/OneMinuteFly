@@ -22,6 +22,7 @@ public class InventoryUI : MonoBehaviour
         InventoryController.GetInstance().OnPickUpItem += OnPickUpItem;
         InventoryController.GetInstance().OnUseCoin += OnUseCoin;
         InventoryController.GetInstance().OnUseIceCream += OnUseIceCream;
+        InventoryController.GetInstance().OnResetInventory += OnResetInventory;
     }
 
     private void OnPickUpItem(InventoryController.PickUpItemsEnum pickUpItemEnum)
@@ -45,6 +46,13 @@ public class InventoryUI : MonoBehaviour
         icecreamGameObject.SetActive(false);
     }
 
+    private void OnResetInventory()
+    {
+        icecreamGameObject.SetActive(false);
+        int coinAmount = InventoryController.GetInstance()._coins;
+        cointAmountText.text = coinAmount.ToString();
+    }
+
     private void OnUseCoin(int amount)
     {
         int coinAmount = InventoryController.GetInstance()._coins;
@@ -56,5 +64,6 @@ public class InventoryUI : MonoBehaviour
         InventoryController.GetInstance().OnPickUpItem -= OnPickUpItem;
         InventoryController.GetInstance().OnUseCoin -= OnUseCoin;
         InventoryController.GetInstance().OnUseIceCream -= OnUseIceCream;
+        InventoryController.GetInstance().OnResetInventory -= OnResetInventory;
     }
 }

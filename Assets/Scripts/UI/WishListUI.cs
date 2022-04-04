@@ -69,6 +69,7 @@ public class WishListUI : MonoBehaviour
         yield return new WaitForSeconds(2f);
         HideWishList();
         GameManager.GetInstance().UnpauseMainGame();
+        GameManager.GetInstance().CheckWin();
     }
 
     public void ShowWishList()

@@ -14,9 +14,11 @@ public class InventoryController
     public delegate void PickUpItemEvent(PickUpItemsEnum pickUpItemEnum);
     public delegate void UseIceCreamEvent();
     public delegate void UseCoinEvent(int amount);
+    public delegate void ResetInventoryEvent();
     public event PickUpItemEvent OnPickUpItem;
     public event UseIceCreamEvent OnUseIceCream;
     public event UseCoinEvent OnUseCoin;
+    public event ResetInventoryEvent OnResetInventory;
 
     public int _coins { private set; get; }
     public bool hasIceCream { private set; get; }
@@ -30,6 +32,7 @@ public class InventoryController
     {
         _coins = 0;
         hasIceCream = false;
+        OnResetInventory?.Invoke();
     }
 
     public static InventoryController GetInstance()

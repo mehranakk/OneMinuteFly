@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     private GameObject dieMenu;
     private GameObject pauseMenu;
+    private GameObject winMenu;
 
     private GameObject loadingScreen;
 
@@ -113,7 +114,20 @@ public class GameManager : MonoBehaviour
         checkpointFlower = null;
         MatingSystem.GetInstance().Reset();
 
+        InitIceCreams();
+        InventoryController.GetInstance().Init();
+
         ResetLifeTimer();
+    }
+
+    public void CheckWin()
+    {
+        if (!TaskController.GetInstance().AreAllTasksDone())
+            return;
+
+        Debug.Log("Win");
+        PauseMainGame();
+        winMenu.SetActive(true);
     }
 
     private void GameOver()
@@ -245,6 +259,8 @@ public class GameManager : MonoBehaviour
         MatingSystem.GetInstance().Init();
         TaskController.GetInstance().Init();
         InventoryController.GetInstance().Init();
+        InitIceCreams();
+
     }
 
     private void ResetLifeTimer()
@@ -260,6 +276,17 @@ public class GameManager : MonoBehaviour
 
         dieMenu = canvas.transform.Find("DieMenu").gameObject;
         pauseMenu = canvas.transform.Find("PauseMenu").gameObject;
+        winMenu = canvas.transform.Find("WinMenu").gameObject;
+    }
+
+    private void InitIceCreams()
+    {
+        IceCream[] lastIceCreams = GameObject.FindObjectsOfType<IceCream>();
+        foreach (IceCream iceCream in lastIceCreams)
+            Destroy(iceCream.gameObject);
+
+        IceCreamSpawner spawner = GameObject.FindObjectOfType<IceCreamSpawner>();
+        spawner.Respawn();
     }
 
     private void OnDestroy()
