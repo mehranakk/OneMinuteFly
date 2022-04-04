@@ -279,7 +279,7 @@ public class CharacterMovement : MonoBehaviour
     public void EndReborning()
     {
         isReborning = false;
-        GameManager.GetInstance().UnpauseMainGame();
+        GameManager.GetInstance().AfterReborn();
     }
 
     //Animation Event

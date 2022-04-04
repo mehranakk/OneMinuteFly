@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     private GameObject dieMenu;
     private GameObject pauseMenu;
     private GameObject winMenu;
+    private GameObject helpMenu;
+    private bool haveAlredyShowedHelpMenu = false;
 
     private GameObject loadingScreen;
 
@@ -62,10 +64,23 @@ public class GameManager : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (!isGamePaused && !pauseMenu.activeInHierarchy)
+            if (helpMenu.activeInHierarchy)
+                ExitHelpMenu();
+            else if (!isGamePaused && !pauseMenu.activeInHierarchy)
                 PauseMenu();
             else if (pauseMenu.activeInHierarchy)
                 ResumeGameFromMenu();
+        }
+        else if (Input.GetKeyDown(KeyCode.H))
+        {
+            if (!helpMenu.activeInHierarchy)
+                HelpMenu();
+            else
+                ExitHelpMenu();
+        } else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (helpMenu.activeInHierarchy)
+                ExitHelpMenu();
         }
     }
 
@@ -142,6 +157,18 @@ public class GameManager : MonoBehaviour
         winMenu.SetActive(true);
     }
 
+    public void AfterReborn()
+    {
+        if (!haveAlredyShowedHelpMenu)
+        {
+            haveAlredyShowedHelpMenu = true;
+            HelpMenu();
+        } else
+        {
+            UnpauseMainGame();
+        }
+    }
+
     private void GameOver()
     {
         Debug.Log("GameOver");
@@ -171,6 +198,18 @@ public class GameManager : MonoBehaviour
             lifeTimeUI.color = Color.yellow;
         else
             lifeTimeUI.color = Color.red;
+    }
+
+    public void HelpMenu()
+    {
+        isGamePaused = true;
+        helpMenu.SetActive(true);
+    }
+
+    public void ExitHelpMenu()
+    {
+        isGamePaused = false;
+        helpMenu.SetActive(false);
     }
 
     public void PauseMainGame()
@@ -293,6 +332,7 @@ public class GameManager : MonoBehaviour
         dieMenu = canvas.transform.Find("DieMenu").gameObject;
         pauseMenu = canvas.transform.Find("PauseMenu").gameObject;
         winMenu = canvas.transform.Find("WinMenu").gameObject;
+        helpMenu = canvas.transform.Find("HelpMenu").gameObject;
     }
 
     private void InitIceCreams()

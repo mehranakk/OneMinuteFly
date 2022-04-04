@@ -6,6 +6,9 @@ using TMPro;
 
 public class MatingSystem
 {
+    public delegate void HaveMatedEvent();
+    public event HaveMatedEvent OnMate;
+
     [SerializeField] private GameObject prefab;
     private MateSpawner spawner;
     public static List<Vector3> spawnPoints = new List<Vector3>();
@@ -73,6 +76,7 @@ public class MatingSystem
         GameManager.GetInstance().SetCheckpointFlower(flower);
         GameManager.GetInstance().GetPlayer().GetComponent<CharacterMovement>().SetMatingFlower(flower);
 
+        OnMate?.Invoke();
         //followingMate.GetComponent<Mate>().DestroySelf();
 
         followingMate = null;
