@@ -232,9 +232,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Eat Icepoop
+  m_text: Eat ice poop
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f8f3c1e4b6071ea45b989bfdfe52ecd2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ebd13edf06dcf304388bb66d50d15f3e, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

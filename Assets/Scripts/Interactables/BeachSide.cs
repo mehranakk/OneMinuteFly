@@ -33,7 +33,7 @@ public class BeachSide : Interactable
         player.DisableAnimationFly();
         player.GetComponent<Animator>().SetTrigger("EatIceCream");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.3f);
 
         InventoryController.GetInstance().UseIceCream();
         GameManager.GetInstance().UnpauseMainGame();
