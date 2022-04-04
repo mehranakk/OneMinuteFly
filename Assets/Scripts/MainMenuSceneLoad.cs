@@ -9,9 +9,9 @@ public class MainMenuSceneLoad : MonoBehaviour
 
     void Start()
     {
-        AudioManager.GetInstance().ChangeVolumeByName("main-menu", 0);
-        AudioManager.GetInstance().PlayByName("main-menu", transform.position);
         timer = 0;
+        AudioManager.GetInstance().ChangeVolumeByName("main-menu", 0f);
+        AudioManager.GetInstance().PlayByName("main-menu", transform.position);
     }
 
     private void Update()
@@ -19,12 +19,12 @@ public class MainMenuSceneLoad : MonoBehaviour
         if (timer < themeVolumeUpLerpTime)
         {
             timer += Time.deltaTime;
-            AudioManager.GetInstance().ChangeVolumeByName("main-menu", Mathf.InverseLerp(0, themeVolumeUpLerpTime, timer));
+            AudioManager.GetInstance().ChangeVolumeByName("main-menu", Mathf.Lerp(0, 0.5f, timer / themeVolumeUpLerpTime));
         }
     }
 
     private void OnDisable()
     {
-        AudioManager.GetInstance().StopAll();
+        AudioManager.GetInstance().StopByName("main-menu");
     }
 }

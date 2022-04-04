@@ -30,7 +30,6 @@ public class AudioManager : MonoBehaviour
 
         foreach (Sound s in sounds)
         {
-
             s.source = gameObject.AddComponent<AudioSource>();
 
             s.source.clip = s.clip;
@@ -38,43 +37,16 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volumeDefault;
             s.source.pitch = s.pitchDefault;
             s.source.loop = s.loopDefault;
-
-            if (s.hasAudibleArea)
-            {
-                s.source.transform.position = s.reference.position;
-            }
         }
 
         ready = true;
-    }
-
-    private void Start()
-    {
     }
 
     private void Update()
     {
         foreach (Sound s in sounds)
         {
-
-            if (s.hasAudibleArea)
-            {
-                try // TODO: when player dies and respawns `distance` crazy
-                {
-                    Vector3 distance = GameManager.GetInstance().GetPlayer().transform.position - s.source.transform.position;
-                    float playerDistance = distance.magnitude;
-                    float audiblePercentage = Mathf.InverseLerp(s.maxDistance, s.minDistance, playerDistance);
-                    float streo = Mathf.InverseLerp(-10, 10, distance.x) * 1.4f - 0.7f;
-
-                    s.source.volume = s.volumeDefault * audiblePercentage;
-                    s.source.panStereo = streo;
-                }
-                catch (Exception exp) {}
-                finally {}
-            }
-
-            else
-                s.source.volume = s.volumeDefault;
+            s.source.volume = s.volumeDefault;
         }
     }
 

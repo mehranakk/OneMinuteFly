@@ -11,9 +11,31 @@ public class Gramophone : Interactable
         base.Awake();
         gramophoneAnimator = GetComponent<Animator>();
     }
+
+    private void OnEnable()
+    {
+        GameManager.GetInstance().OnGameOver += OnGameOver;
+        GameManager.GetInstance().OnPlayerDeath += OnPlayerDeath;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.GetInstance().OnGameOver -= OnGameOver;
+        GameManager.GetInstance().OnPlayerDeath -= OnPlayerDeath;
+    }
+
+    private void Start()
+    {
+    }
+
     public override void Interact()
     {
         StartCoroutine(PlayJazz());
+    }
+
+    private void Update()
+    {
+        HandleAudioVolume();
     }
 
     private IEnumerator PlayJazz()
@@ -27,5 +49,24 @@ public class Gramophone : Interactable
         GameManager.GetInstance().GetPlayer().GetComponent<CharacterMovement>().EndJazzDance();
         GameManager.GetInstance().UnpauseMainGame();
         TaskController.GetInstance().DoneTask(TaskController.TasksEnum.JAZZ);
+    }
+
+    private void HandleAudioVolume()
+    {
+        Vector3 distance = GameManager.GetInstance().GetPlayer().transform.position - transform.position;
+        float playerDistance = distance.magnitude;
+        float audiblePercentage = Mathf.InverseLerp(5, 1, playerDistance);
+
+        AudioManager.GetInstance().ChangeVolumeByName("jazz", 0.6f * audiblePercentage);
+    }
+
+    public void OnPlayerDeath()
+    {
+        AudioManager.GetInstance().StopByName("jazz");
+    }
+
+    public void OnGameOver()
+    {
+        AudioManager.GetInstance().StopByName("jazz");
     }
 }

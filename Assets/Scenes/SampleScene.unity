@@ -326,26 +326,36 @@ MonoBehaviour:
     minDistance: 1
     maxDistance: 10
     reference: {fileID: 0}
-  - name: bee-loop-short
-    clip: {fileID: 8300000, guid: ad884254d68b44dddbe9624d3c1b113a, type: 3}
-    volumeDefault: 1
-    pitchDefault: 1
-    loopDefault: 0
-    source: {fileID: 0}
-    hasAudibleArea: 0
-    minDistance: 1
-    maxDistance: 10
-    reference: {fileID: 0}
   - name: jazz
     clip: {fileID: 8300000, guid: 334beec45304b4573acd2f73ef9c5022, type: 3}
     volumeDefault: 1
     pitchDefault: 1
-    loopDefault: 0
+    loopDefault: 1
     source: {fileID: 0}
     hasAudibleArea: 1
     minDistance: 5
     maxDistance: 10
     reference: {fileID: 457084050}
+  - name: seaside
+    clip: {fileID: 8300000, guid: b3f4fb4453858443a95a15c6ff16cef0, type: 3}
+    volumeDefault: 0.1
+    pitchDefault: 0.9
+    loopDefault: 1
+    source: {fileID: 0}
+    hasAudibleArea: 1
+    minDistance: 3
+    maxDistance: 10
+    reference: {fileID: 1052535027}
+  - name: egg-crack
+    clip: {fileID: 8300000, guid: b3c985672a5864c7fa763b1dd694af26, type: 3}
+    volumeDefault: 1
+    pitchDefault: 1
+    loopDefault: 0
+    source: {fileID: 0}
+    hasAudibleArea: 0
+    minDistance: 3
+    maxDistance: 10
+    reference: {fileID: 1052535027}
 --- !u!4 &320920649
 Transform:
   m_ObjectHideFlags: 0
@@ -2623,6 +2633,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: -1934345717165055291, guid: 78b61c0e1b2aa4044ade65d82dd71ca4, type: 3}
+--- !u!4 &1052535027 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9132469267941394533, guid: 78b61c0e1b2aa4044ade65d82dd71ca4, type: 3}
+  m_PrefabInstance: {fileID: 1052535026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1079259965
 GameObject:
   m_ObjectHideFlags: 0

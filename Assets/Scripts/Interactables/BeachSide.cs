@@ -11,6 +11,35 @@ public class BeachSide : Interactable
         startAnimationPosGameObject = transform.Find("StartAnimationPos").gameObject;
     }
 
+    private void Start()
+    {
+        AudioManager.GetInstance().PlayByName("seaside", transform.position);
+    }
+
+    private void Update()
+    {
+        HandleAudioVolume();
+    }
+
+    private void OnEnable()
+    {
+        GameManager.GetInstance().OnGameOver += OnGameOver;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.GetInstance().OnGameOver -= OnGameOver;
+    }
+
+    private void HandleAudioVolume()
+    {
+        Vector3 distance = GameManager.GetInstance().GetPlayer().transform.position - transform.position;
+        float playerDistance = distance.magnitude;
+        float audiblePercentage = Mathf.InverseLerp(5, 1, playerDistance);
+
+        AudioManager.GetInstance().ChangeVolumeByName("seaside", 0.4f * audiblePercentage);
+    }
+
     public override void Interact()
     {
         Debug.Log("Eat icecream at beachside");
@@ -40,5 +69,10 @@ public class BeachSide : Interactable
         InventoryController.GetInstance().UseIceCream();
         GameManager.GetInstance().UnpauseMainGame();
         TaskController.GetInstance().DoneTask(TaskController.TasksEnum.EAT_ICECREAM);
+    }
+
+    private void OnGameOver()
+    {
+        AudioManager.GetInstance().StopByName("seaside");
     }
 }

@@ -2255,35 +2255,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: main-menu
-    clip: {fileID: 8300000, guid: 4601905237e8848a1a5686a77826fbbe, type: 3}
-    volumeDefault: 0
+    clip: {fileID: 8300000, guid: e02a86d5a02e1429da786759cb0a7394, type: 3}
+    volumeDefault: 0.5
     pitchDefault: 1
     loopDefault: 1
     source: {fileID: 0}
-    hasAudibleArea: 0
-    minDistance: 0
-    maxDistance: 0
-    reference: {fileID: 0}
-  - name: bee-loop-short
-    clip: {fileID: 8300000, guid: ad884254d68b44dddbe9624d3c1b113a, type: 3}
-    volumeDefault: 1
+  - name: seaside
+    clip: {fileID: 8300000, guid: b3f4fb4453858443a95a15c6ff16cef0, type: 3}
+    volumeDefault: 0.5
     pitchDefault: 1
-    loopDefault: 0
+    loopDefault: 1
     source: {fileID: 0}
-    hasAudibleArea: 0
-    minDistance: 0
-    maxDistance: 0
-    reference: {fileID: 0}
-  - name: jazz-loop
-    clip: {fileID: 8300000, guid: ad884254d68b44dddbe9624d3c1b113a, type: 3}
+  - name: jazz
+    clip: {fileID: 8300000, guid: 334beec45304b4573acd2f73ef9c5022, type: 3}
     volumeDefault: 0.5
     pitchDefault: 1
     loopDefault: 0
     source: {fileID: 0}
-    hasAudibleArea: 0
-    minDistance: 5
-    maxDistance: 10
-    reference: {fileID: 0}
 --- !u!4 &1713248603
 Transform:
   m_ObjectHideFlags: 0

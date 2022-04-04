@@ -13,9 +13,4 @@ public class Sound
     public bool loopDefault = false;
 
     [HideInInspector] public AudioSource source;
-
-    [Header("Audible Area Limit")]
-    public bool hasAudibleArea = false;
-    public float minDistance = 1f, maxDistance = 10f;
-    public Transform reference;
 }

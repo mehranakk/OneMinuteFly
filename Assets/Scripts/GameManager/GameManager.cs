@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
 
     private GameObject loadingScreen;
 
+    public delegate void PlayerDeathEvent();
+    public event PlayerDeathEvent OnPlayerDeath, OnGameOver;
+
     private void Awake()
     {
         if (instance != null)
@@ -85,12 +88,15 @@ public class GameManager : MonoBehaviour
     private void CurrentFlyDied()
     {
         player.GetComponent<CharacterMovement>().Die();
+
         if (checkpointFlower == null)
         {
+            OnGameOver?.Invoke();
             GameOver();
         }
         else
         {
+            OnPlayerDeath?.Invoke();
             StartCoroutine(WaitAndStartGameFromCheckPoint());
         }
     }
@@ -119,6 +125,7 @@ public class GameManager : MonoBehaviour
     private void SpawnPlayerAt(GameObject flower)
     {
         Vector2 spawnPos = flower.transform.position;
+        
         spawnPos.y += 1.3f;
         GameObject newPlayer = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
         player = newPlayer;

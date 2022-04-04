@@ -235,7 +235,6 @@ public class CharacterMovement : MonoBehaviour
         characterAnimator.SetTrigger("Death");
         isDead = true;
         StartCoroutine(WaitAndDeactive());
-        AudioManager.GetInstance().StopAll();
     }
 
     IEnumerator WaitAndDeactive()
@@ -275,5 +274,10 @@ public class CharacterMovement : MonoBehaviour
     {
         isReborning = false;
         GameManager.GetInstance().UnpauseMainGame();
+    }
+
+    //Animation Event
+    public void StartReborning()
+    {
     }
 }
