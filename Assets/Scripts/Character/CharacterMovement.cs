@@ -170,9 +170,17 @@ public class CharacterMovement : MonoBehaviour
         matingFlower = null;
     }
 
-    public void Party()
+    public void StartParty()
     {
         characterAnimator.SetTrigger("Party");
+        GameManager.GetInstance().PauseMainGame();
+        StartCoroutine(EnoughParty());
+    }
+
+    IEnumerator EnoughParty()
+    {
+        yield return new WaitForSeconds(3);
+        GameManager.GetInstance().UnpauseMainGame();
         TaskController.GetInstance().DoneTask(TaskController.TasksEnum.PARTY);
     }
 

@@ -12,7 +12,7 @@ public class PartyCore : Interactable
 
     public override void Interact()
     {
-        GameManager.GetInstance().GetPlayer().GetComponent<CharacterMovement>().Party();
+        GameManager.GetInstance().GetPlayer().GetComponent<CharacterMovement>().StartParty();
         LockInteraction();
     }
 }
