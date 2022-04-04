@@ -8,7 +8,8 @@ public class TaskController
     public enum TasksEnum
     {
         FLY,
-        POOP
+        POOP,
+        JAZZ
 
     }
     private static TaskController instance;
@@ -31,6 +32,7 @@ public class TaskController
         {
             tasks.Add(TasksEnum.FLY, new Task("Fly for the first time"));
             tasks.Add(TasksEnum.POOP, new Task("Poop for the first time"));
+            tasks.Add(TasksEnum.JAZZ, new Task("Listen to Jazz"));
         }
     }
 

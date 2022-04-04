@@ -54,7 +54,7 @@
 			"entityInstances": [
 				{
 					"__identifier": "Flower",
-					"__grid": [32,4],
+					"__grid": [32,3],
 					"__pivot": [0.5,0.5],
 					"__tags": [],
 					"__tile": null,
@@ -63,7 +63,7 @@
 					"width": 16,
 					"height": 16,
 					"defUid": 144,
-					"px": [520,72],
+					"px": [520,56],
 					"fieldInstances": [
 						{ "__identifier": "Size", "__value": 1, "__type": "Int", "__tile": null, "defUid": 147, "realEditorValues": [] },
 						{ "__identifier": "Color", "__value": "#FF0000", "__type": "Color", "__tile": null, "defUid": 148, "realEditorValues": [] }
@@ -71,7 +71,7 @@
 				},
 				{
 					"__identifier": "Flower",
-					"__grid": [6,11],
+					"__grid": [6,10],
 					"__pivot": [0.5,0.5],
 					"__tags": [],
 					"__tile": null,
@@ -80,7 +80,7 @@
 					"width": 16,
 					"height": 16,
 					"defUid": 144,
-					"px": [104,184],
+					"px": [104,168],
 					"fieldInstances": [
 						{ "__identifier": "Size", "__value": 1, "__type": "Int", "__tile": null, "defUid": 147, "realEditorValues": [] },
 						{ "__identifier": "Color", "__value": "#FF0000", "__type": "Color", "__tile": null, "defUid": 148, "realEditorValues": [] }
@@ -88,7 +88,7 @@
 				},
 				{
 					"__identifier": "Flower",
-					"__grid": [32,28],
+					"__grid": [32,27],
 					"__pivot": [0.5,0.5],
 					"__tags": [],
 					"__tile": null,
@@ -97,7 +97,7 @@
 					"width": 16,
 					"height": 16,
 					"defUid": 144,
-					"px": [520,456],
+					"px": [520,440],
 					"fieldInstances": [
 						{ "__identifier": "Size", "__value": 1, "__type": "Int", "__tile": null, "defUid": 147, "realEditorValues": [] },
 						{ "__identifier": "Color", "__value": "#FF0000", "__type": "Color", "__tile": null, "defUid": 148, "realEditorValues": [] }
@@ -186,6 +186,20 @@
 					"defUid": 174,
 					"px": [112,288],
 					"fieldInstances": [{ "__identifier": "Size", "__value": 6, "__type": "Int", "__tile": null, "defUid": 175, "realEditorValues": [{ "id": "V_Int", "params": [6] }] }]
+				},
+				{
+					"__identifier": "Gramophone",
+					"__grid": [22,20],
+					"__pivot": [0,0],
+					"__tags": [],
+					"__tile": null,
+					"__smartColor": "#DFD40E",
+					"iid": "9c2315f0-8dc0-11ec-9932-cb709bc8f5c2",
+					"width": 16,
+					"height": 16,
+					"defUid": 176,
+					"px": [352,320],
+					"fieldInstances": []
 				}
 			]
 		},

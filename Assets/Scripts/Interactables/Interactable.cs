@@ -38,6 +38,7 @@ public class Interactable: MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("inja");
         if (!isInteractionLock)
         {
             messageGameObject.SetActive(true);
@@ -47,6 +48,7 @@ public class Interactable: MonoBehaviour
 
     protected virtual void OnTriggerExit2D(Collider2D collision)
     {
+        Debug.Log("unja");
         if (!isInteractionLock)
         {
             messageGameObject.SetActive(false);
