@@ -11,7 +11,6 @@ public class PartyManager : MonoBehaviour
 
     [SerializeField] private GameObject bouncerPrefab;
     private GameObject bouncerFly;
-    private GameObject player;
 
     void Start()
     {
@@ -30,8 +29,13 @@ public class PartyManager : MonoBehaviour
                 partyFly.GetComponent<PartyFly>().Flip();
         }
 
-        bouncerFly = Instantiate(bouncerPrefab, transform.position, Quaternion.identity);
+        bouncerFly = Instantiate(bouncerPrefab, transform.position, Quaternion.identity, transform);
         bouncerFly.GetComponent<BouncerFly>().SetPartyCenter(transform.position);
+    }
+
+    public void EnterParty()
+    {
+        GetComponent<CircleCollider2D>().enabled = false;
     }
 
 }

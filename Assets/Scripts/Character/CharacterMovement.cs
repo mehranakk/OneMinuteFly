@@ -162,6 +162,12 @@ public class CharacterMovement : MonoBehaviour
         matingFlower = null;
     }
 
+    public void Party()
+    {
+        characterAnimator.SetTrigger("Party");
+        TaskController.GetInstance().DoneTask(TaskController.TasksEnum.PARTY);
+    }
+
     public void Die()
     {
         Debug.Log("Player Died");

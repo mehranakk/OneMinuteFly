@@ -3,7 +3,7 @@ using System.Collections;
 
 public class InventoryController : MonoBehaviour
 {
-    private int _coins;
+    public int _coins;
 
     // Use this for initialization
     void Start()

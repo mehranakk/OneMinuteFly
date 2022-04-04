@@ -25,19 +25,29 @@ public class BouncerFly : Interactable
 
     private void Update()
     {
-        float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
-        float playerDistanceToPartyCenter = Vector3.Distance(player.transform.position, partyCenter);
-        if (playerDistanceToPartyCenter < 5f && distanceToPlayer > 1f)
+        if (!IsInteractionLock())
         {
-            MoveToPlayer();
+            float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+            float playerDistanceToPartyCenter = Vector3.Distance(player.transform.position, partyCenter);
+            if (playerDistanceToPartyCenter < 5f && distanceToPlayer > 1f)
+            {
+                MoveToPlayer();
+            }
         }
+    }
 
-        if (playerDistanceToPartyCenter > 5f)
-        {
-            bouncerAnimator.SetBool("ShouldBlock", false);
-        }
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.OnTriggerEnter2D(collision);
+        if (!isInteractionLock)
+            ShouldBlock(true);
+    }
 
-        
+    protected override void OnTriggerExit2D(Collider2D collision)
+    {
+        base.OnTriggerExit2D(collision);
+        if (!isInteractionLock)
+            ShouldBlock(false);
     }
 
     public override void Interact()
@@ -48,17 +58,16 @@ public class BouncerFly : Interactable
 
         if (player.GetComponent<InventoryController>().GetCoin(1))
         {
+            ShouldBlock(false);
+            LockInteraction();
+            GetComponentInParent<PartyManager>().EnterParty();
             Debug.Log("fly can join the party");
-        }
-        else
-        {
-            bouncerAnimator.SetBool("ShouldBlock", true);
         }
     }
 
-    public void Block()
+    public void ShouldBlock(bool state)
     {
-        bouncerAnimator.SetBool("ShouldBlock", true);
+        bouncerAnimator.SetBool("ShouldBlock", state);
     }
 
     void MoveToPlayer()
