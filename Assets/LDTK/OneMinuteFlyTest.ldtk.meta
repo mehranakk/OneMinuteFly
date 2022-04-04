@@ -56,6 +56,8 @@ ScriptedImporter:
     _asset: {fileID: 4360876869198580078, guid: d123e9695a1f21d49b4d46366fa8a0ed, type: 3}
   - _key: Khaar
     _asset: {fileID: 5629603465867954154, guid: a889a54033f38d34aa829c0dfdae49b2, type: 3}
+  - _key: Shell
+    _asset: {fileID: 63734696901033302, guid: cada88c45d49a1f468829074d215a7c6, type: 3}
   _enumGenerate: 0
   _enumPath: 
   _enumNamespace: 
