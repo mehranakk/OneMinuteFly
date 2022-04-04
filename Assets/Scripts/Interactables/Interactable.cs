@@ -52,5 +52,6 @@ public class Interactable: MonoBehaviour
             messageGameObject.SetActive(false);
             InteractionSystem.GetInstance().ClearCurrentInteractableObject();
         }
+        GameManager.GetInstance().GetPlayer().GetComponentInChildren<CharacterThinking>().ClearThinking();
     }
 }
