@@ -198,7 +198,6 @@ public class GameManager : MonoBehaviour
         {
             InitAll();
             StartCoroutine(UpdateTime());
-            //isGamePaused = false;
         }
         loadingScreen.SetActive(false);
     }

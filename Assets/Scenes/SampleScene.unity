@@ -232,7 +232,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &320920648
 MonoBehaviour:
@@ -246,7 +246,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18f3201ab6774cd5a39474ca31abb06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: theme
+    clip: {fileID: 8300000, guid: 4601905237e8848a1a5686a77826fbbe, type: 3}
+    volumeDefault: 1
+    pitchDefault: 1
+    loopDefault: 1
+    source: {fileID: 0}
+    hasAudibleArea: 0
+    minDistance: 1
+    maxDistance: 10
+    reference: {fileID: 0}
+  - name: bee-loop-short
+    clip: {fileID: 8300000, guid: ad884254d68b44dddbe9624d3c1b113a, type: 3}
+    volumeDefault: 1
+    pitchDefault: 1
+    loopDefault: 0
+    source: {fileID: 0}
+    hasAudibleArea: 0
+    minDistance: 1
+    maxDistance: 10
+    reference: {fileID: 0}
+  - name: jazz
+    clip: {fileID: 8300000, guid: f1434319867274bc2a417dfffda392c4, type: 3}
+    volumeDefault: 1
+    pitchDefault: 1
+    loopDefault: 1
+    source: {fileID: 0}
+    hasAudibleArea: 1
+    minDistance: 5
+    maxDistance: 10
+    reference: {fileID: 1976799316}
 --- !u!4 &320920649
 Transform:
   m_ObjectHideFlags: 0
@@ -2364,6 +2394,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: -2943952062526814662, guid: 78b61c0e1b2aa4044ade65d82dd71ca4, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3694805335333592974, guid: 78b61c0e1b2aa4044ade65d82dd71ca4, type: 3}
       propertyPath: m_ColliderPaths.Array.size
       value: 1
@@ -3102,6 +3136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: -1934345717165055291, guid: 78b61c0e1b2aa4044ade65d82dd71ca4, type: 3}
+--- !u!4 &1976799316 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1620513222826460038, guid: 78b61c0e1b2aa4044ade65d82dd71ca4, type: 3}
+  m_PrefabInstance: {fileID: 1976799315}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2080313965
 GameObject:
   m_ObjectHideFlags: 0

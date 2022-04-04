@@ -19,6 +19,7 @@ public class Gramophone : Interactable
     private IEnumerator PlayJazz()
     {
         gramophoneAnimator.SetBool("IsPlaying", true);
+        AudioManager.GetInstance().PlayByName("jazz", transform.position);
         GameManager.GetInstance().PauseMainGame();
         GameManager.GetInstance().GetPlayer().GetComponent<CharacterMovement>().StartJazzDance();
         yield return new WaitForSeconds(5);

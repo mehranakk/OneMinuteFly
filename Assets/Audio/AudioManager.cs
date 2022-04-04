@@ -7,6 +7,10 @@ public class AudioManager : MonoBehaviour
     private static AudioManager instance;
     public List<Sound> sounds;
 
+    private List<Sound> playingSongs;
+
+    private bool ready;
+
     public static AudioManager GetInstance()
     {
         return instance;
@@ -22,6 +26,7 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        DontDestroyOnLoad(this);
 
         foreach (Sound s in sounds)
         {
@@ -30,21 +35,50 @@ public class AudioManager : MonoBehaviour
 
             s.source.clip = s.clip;
 
-            s.source.volume = s.volumeDefualt;
+            s.source.volume = s.volumeDefault;
             s.source.pitch = s.pitchDefault;
             s.source.loop = s.loopDefault;
+
+            if (s.hasAudibleArea)
+            {
+                s.source.transform.position = s.reference.position;
+            }
         }
+
+        ready = true;
     }
 
     private void Start()
     {
-        Vector2 playAt = GameObject.Find("Main Camera").transform.position;
-        PlayByName("theme", playAt);
     }
 
     private void Update()
     {
+        foreach (Sound s in sounds)
+        {
+            s.source.volume = s.volumeDefault;
 
+            if (s.hasAudibleArea)
+            {
+                Vector3 distance = GameManager.GetInstance().GetPlayer().transform.position - s.source.transform.position;
+                float playerDistance = distance.magnitude;
+                float audiblePercentage = Mathf.InverseLerp(s.maxDistance, s.minDistance, playerDistance);
+                float streo = Mathf.InverseLerp(-10, 10, distance.x) * 1.4f - 0.7f;
+                
+                s.source.volume *= audiblePercentage;
+                s.source.panStereo = streo;
+            }
+        }
+    }
+
+    private void OnValidate()
+    {
+        if (ready)
+            foreach (Sound s in sounds)
+            {
+                s.source.volume = s.volumeDefault;
+                s.source.pitch = s.pitchDefault;
+            }
     }
 
     public void PlayByName(string name, Vector2 location)
@@ -55,13 +89,35 @@ public class AudioManager : MonoBehaviour
             s.source.Play();
             Debug.Log(string.Format("Playing audio clip '{0}'", name));
         }
-        catch (NullReferenceException exp)
+        catch (Exception exp)
         {
             Debug.LogWarning(string.Format("Can not find audio clip '{0}' to play", name));
         }
-        catch (ArgumentNullException exp)
+    }
+
+    public void ChangeVolumeByName(string name, float volume)
+    {
+        try
         {
-            Debug.LogWarning(string.Format("Can not find audio clip '{0}' to play", name));
+            Sound s = sounds.Find(sound => sound.name == name);
+            s.volumeDefault = volume;
+        }
+        catch (Exception exp)
+        {
+            Debug.LogWarning(string.Format("Can not find audio clip '{0}' to modify", name));
+        }
+    }
+
+    public void SetPositionByName(string name, Vector3 pos)
+    {
+        try
+        {
+            Sound s = sounds.Find(sound => sound.name == name);
+            s.source.transform.position = pos;
+        }
+        catch (Exception exp)
+        {
+            Debug.LogWarning(string.Format("Can not find audio clip '{0}' to set pos", name));
         }
     }
 
@@ -73,11 +129,7 @@ public class AudioManager : MonoBehaviour
             s.source.Stop();
             Debug.Log(string.Format("Stoping audio clip '{0}'", name));
         }
-        catch (NullReferenceException exp)
-        {
-            Debug.LogWarning(string.Format("Can not find audio clip '{0}' to stop", name));
-        }
-        catch (ArgumentNullException exp)
+        catch (Exception exp)
         {
             Debug.LogWarning(string.Format("Can not find audio clip '{0}' to stop", name));
         }

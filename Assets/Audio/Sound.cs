@@ -7,10 +7,15 @@ public class Sound
 
     public AudioClip clip;
 
-    [Range(0.0f, 1.0f)] public float volumeDefualt = 1.0f;
+    [Header("General")]
+    [Range(0.0f, 1.0f)] public float volumeDefault = 1.0f;
     [Range(0.5f, 3.0f)] public float pitchDefault = 1.0f;
     public bool loopDefault = false;
 
-    [HideInInspector]
-    public AudioSource source;
+    [HideInInspector] public AudioSource source;
+
+    [Header("Audible Area Limit")]
+    public bool hasAudibleArea = false;
+    public float minDistance = 1f, maxDistance = 10f;
+    public Transform reference;
 }
