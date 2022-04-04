@@ -22,7 +22,9 @@ public class GameManager : MonoBehaviour
     private int lifeTimer;
     private TextMeshProUGUI lifeTimeUI;
     private GameObject helpTextUI;
+
     private GameObject dieMenu;
+    private GameObject pauseMenu;
 
     private GameObject loadingScreen;
 
@@ -42,15 +44,18 @@ public class GameManager : MonoBehaviour
         //InitAll();
     }
 
-    private void Start()
-    {
-    }
-
     private void Update()
     {
         if (!isGamePaused && lifeTimer <= 0)
         {
             KillFly();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (!isGamePaused && !pauseMenu.activeInHierarchy)
+                PauseMenu();
+            else if (pauseMenu.activeInHierarchy)
+                ResumeGameFromMenu();
         }
     }
 
@@ -201,6 +206,19 @@ public class GameManager : MonoBehaviour
         }
         loadingScreen.SetActive(false);
     }
+
+    public void PauseMenu()
+    {
+        PauseMainGame();
+        pauseMenu.SetActive(true);
+    }
+
+    public void ResumeGameFromMenu()
+    {
+        pauseMenu.SetActive(false);
+        UnpauseMainGame();
+    }
+
     public GameObject GetPlayer()
     {
         return player;
@@ -232,7 +250,9 @@ public class GameManager : MonoBehaviour
         canvas = GameObject.Find("Canvas");
         lifeTimeUI = canvas.transform.Find("LifeTimer").GetComponent<TextMeshProUGUI>();
         helpTextUI = canvas.transform.Find("HelpText").gameObject;
+
         dieMenu = canvas.transform.Find("DieMenu").gameObject;
+        pauseMenu = canvas.transform.Find("PauseMenu").gameObject;
     }
 
     private void OnDestroy()
