@@ -114,11 +114,23 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void StopAll()
+    public Sound CopyByName(string name)
     {
-        foreach (Sound s in sounds)
+        try
         {
-            s.source.Stop();
+            Sound s = sounds.Find(sound => sound.name == name);
+            Sound newSound = new Sound();
+            newSound.clip = s.clip;
+            newSound.volumeDefault = s.volumeDefault;
+            newSound.pitchDefault = s.pitchDefault;
+            newSound.loopDefault = s.loopDefault;
+
+            return newSound;
+        }
+        catch (Exception exp)
+        {
+            Debug.LogWarning(string.Format("Can not find audio clip '{0}' to stop", name));
+            return null;
         }
     }
 

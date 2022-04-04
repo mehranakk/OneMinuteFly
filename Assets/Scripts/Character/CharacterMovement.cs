@@ -279,5 +279,6 @@ public class CharacterMovement : MonoBehaviour
     //Animation Event
     public void StartReborning()
     {
+        AudioManager.GetInstance().PlayByName("egg-crack", transform.position);
     }
 }

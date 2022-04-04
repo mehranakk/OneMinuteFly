@@ -2272,6 +2272,24 @@ MonoBehaviour:
     pitchDefault: 1
     loopDefault: 0
     source: {fileID: 0}
+  - name: egg-crack
+    clip: {fileID: 8300000, guid: b3c985672a5864c7fa763b1dd694af26, type: 3}
+    volumeDefault: 0.5
+    pitchDefault: 0.8
+    loopDefault: 0
+    source: {fileID: 0}
+  - name: frog-idle
+    clip: {fileID: 8300000, guid: 7b93122d42d55416191b005b17708de2, type: 3}
+    volumeDefault: 0.6
+    pitchDefault: 0.8
+    loopDefault: 1
+    source: {fileID: 0}
+  - name: frog-attack
+    clip: {fileID: 8300000, guid: 4d0494e9738ec4174ba546acdc23bbbe, type: 3}
+    volumeDefault: 0.8
+    pitchDefault: 0.6
+    loopDefault: 0
+    source: {fileID: 0}
 --- !u!4 &1713248603
 Transform:
   m_ObjectHideFlags: 0
