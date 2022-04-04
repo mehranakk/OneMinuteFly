@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class FrogController : MonoBehaviour
 {
+    [SerializeField] private float minDist = 1, maxDist = 2;
+    [SerializeField] private float maxVolume = 0.2f;
+
     private Animator frogAnimator;
 
     [SerializeField] private float buildUpTime;
@@ -106,8 +109,8 @@ public class FrogController : MonoBehaviour
     {
         Vector3 distance = GameManager.GetInstance().GetPlayer().transform.position - transform.position;
         float playerDistance = distance.magnitude;
-        float audiblePercentage = Mathf.InverseLerp(4, 1, playerDistance);
+        float audiblePercentage = Mathf.InverseLerp(maxDist, minDist, playerDistance);
 
-        frogIdleSound.source.volume = 1f * audiblePercentage;
+        frogIdleSound.source.volume = maxVolume * audiblePercentage;
     }
 }

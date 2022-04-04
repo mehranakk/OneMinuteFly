@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BeachSide : Interactable
 {
+    [SerializeField] private float minDist = 1, maxDist = 10;
+    [SerializeField] private float maxVolume = 0.25f;
+
     private GameObject startAnimationPosGameObject;
     private void Awake()
     {
@@ -35,9 +38,9 @@ public class BeachSide : Interactable
     {
         Vector3 distance = GameManager.GetInstance().GetPlayer().transform.position - transform.position;
         float playerDistance = distance.magnitude;
-        float audiblePercentage = Mathf.InverseLerp(5, 1, playerDistance);
+        float audiblePercentage = Mathf.InverseLerp(maxDist, minDist, playerDistance);
 
-        AudioManager.GetInstance().ChangeVolumeByName("seaside", 0.25f * audiblePercentage);
+        AudioManager.GetInstance().ChangeVolumeByName("seaside", maxVolume * audiblePercentage);
     }
 
     public override void Interact()
