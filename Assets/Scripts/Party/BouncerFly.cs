@@ -27,6 +27,7 @@ public class BouncerFly : Interactable
     {
         if (!IsInteractionLock())
         {
+            player = GameManager.GetInstance().GetPlayer();
             float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
             float playerDistanceToPartyCenter = Vector3.Distance(player.transform.position, partyCenter);
             if (playerDistanceToPartyCenter < 5f && distanceToPlayer > 1f)
@@ -85,4 +86,6 @@ public class BouncerFly : Interactable
     {
         partyCenter = center;
     }
+
+
 }
