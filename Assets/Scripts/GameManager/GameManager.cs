@@ -118,6 +118,9 @@ public class GameManager : MonoBehaviour
         InitIceCreams();
         InventoryController.GetInstance().Init();
 
+        GarbageSpawner garbageSpawner = GameObject.FindObjectOfType<GarbageSpawner>();
+        garbageSpawner.Reset();
+
         ResetLifeTimer();
     }
 

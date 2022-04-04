@@ -10,6 +10,20 @@ public class GarbageSpawner : MonoBehaviour
 
     private void Start()
     {
+        SpawnAllGarbages();
+    }
+
+    public void Reset()
+    {
+        Garbage[] garbages = GameObject.FindObjectsOfType<Garbage>();
+        foreach (Garbage g in garbages)
+            Destroy(g);
+
+        SpawnAllGarbages();
+    }
+
+    public void SpawnAllGarbages()
+    {
         foreach (GarbageSpawnPoint pos in spawnPositions)
             SpawnGarbage(pos);
     }
@@ -26,11 +40,4 @@ public class GarbageSpawner : MonoBehaviour
 
         newGarbage.GetComponent<Garbage>().coins = pos.GetComponent<LDtkFields>().GetInt("Coins");
     }
-
-    public GameObject FindSpawnPoint()
-    {
-        int randIndex = Random.Range(0, spawnPositions.Count);
-        return spawnPositions[randIndex].gameObject;
-    }
-    
 }
