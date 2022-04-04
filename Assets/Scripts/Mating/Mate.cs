@@ -26,6 +26,7 @@ public class Mate : Interactable
     private void OnEnable()
     {
         MatingSystem.mates.Add(this);
+        Debug.Log("OnEnable");
     }
 
     private void OnDisable()
@@ -141,12 +142,13 @@ public class Mate : Interactable
 
     public void DestroySelf()
     {
-        StartCoroutine(WaitAndDestroy());
+        Destroy(this.gameObject);
+        //StartCoroutine(WaitAndDestroy());
     }
 
     IEnumerator WaitAndDestroy()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         Destroy(this.gameObject);
     }
 

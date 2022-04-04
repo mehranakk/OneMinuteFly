@@ -104,7 +104,8 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitAndStartGameFromCheckPoint()
     {
-        MatingSystem.KillMatedMates();
+        Debug.Log("WaitAndStartGameFromCheckPoint");
+        //MatingSystem.KillMatedMates();
 
         yield return new WaitForSeconds(1.1f);
 
@@ -265,6 +266,7 @@ public class GameManager : MonoBehaviour
 
     private void ResetLifeTimer()
     {
+        Debug.Log("ResetLifeTimer");
         lifeTimer = lifeTime;
     }
 

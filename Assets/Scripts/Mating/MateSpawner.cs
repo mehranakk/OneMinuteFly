@@ -8,12 +8,10 @@ public class MateSpawner : MonoBehaviour
     [SerializeField] private GameObject matePrefab;
     private Vector3 spawnPoint;
 
-    public void SpawnMate()
+    public void SpawnMates()
     {
-        // find a good spawn point within map
-        spawnPoint = FindSpawnPoint();
-        // spawn mate at spawn point
-        Instantiate(matePrefab, spawnPoint, Quaternion.identity);
+        foreach (Vector3 pos in MatingSystem.spawnPoints)
+            Instantiate(matePrefab, pos, Quaternion.identity);
     }
 
     private Vector3 FindSpawnPoint()

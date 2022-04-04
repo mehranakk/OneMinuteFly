@@ -23,6 +23,7 @@ public class MatingSystem
     public void Init()
     {
         spawner = GameObject.FindObjectOfType<MateSpawner>();
+        Reset();
     }
 
     public static MatingSystem GetInstance()
@@ -34,9 +35,10 @@ public class MatingSystem
 
     public void Reset()
     {
-        foreach (Mate m in mates)
-            if (!m.alreadyMated)
-                m.UnlockInteraction();
+        for(int i = mates.Count - 1; i >=0; i--)
+            mates[i].DestroySelf();
+
+        RespawnAll();
     }
 
     public void SetFollowingMateAndUnlockFlowers(Mate mate)
@@ -80,7 +82,11 @@ public class MatingSystem
         GameObject helpText = GameManager.GetInstance().GetHelpText();
         helpText.SetActive(false);
 
-        spawner.SpawnMate();
+    }
+
+    public void RespawnAll()
+    {
+        spawner.SpawnMates();
     }
 
     public static void KillMatedMates()

@@ -1283,7 +1283,7 @@
 			"fieldDefs": []
 		},
 		{
-			"identifier": "Khaar",
+			"identifier": "Thistle",
 			"uid": 190,
 			"tags": [],
 			"width": 16,
@@ -1448,10 +1448,10 @@
 			"identifier": "Level_2",
 			"iid": "c36b44e0-8dc0-11ec-85a0-85e0dae9c232",
 			"uid": 188,
-			"worldX": -2544,
+			"worldX": -2528,
 			"worldY": 16,
 			"worldDepth": 0,
-			"pxWid": 1792,
+			"pxWid": 1776,
 			"pxHei": 1328,
 			"__bgColor": "#696A79",
 			"bgColor": null,

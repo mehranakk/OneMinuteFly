@@ -52,6 +52,10 @@ ScriptedImporter:
     _asset: {fileID: 819327318678757533, guid: f2b45922c28db6048888ca666890b68e, type: 3}
   - _key: LampPole
     _asset: {fileID: 3069516489554435510, guid: 6241ba83f5b79604386b54e2a1f8e572, type: 3}
+  - _key: TrashBin
+    _asset: {fileID: 4360876869198580078, guid: d123e9695a1f21d49b4d46366fa8a0ed, type: 3}
+  - _key: Khaar
+    _asset: {fileID: 5629603465867954154, guid: a889a54033f38d34aa829c0dfdae49b2, type: 3}
   _enumGenerate: 0
   _enumPath: 
   _enumNamespace: 
