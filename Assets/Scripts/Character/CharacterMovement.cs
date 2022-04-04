@@ -17,7 +17,7 @@ public class CharacterMovement : MonoBehaviour
     private bool isRightBlock, isLeftBlock, isUpBlock, isDownBlock;
 
     private bool isDead = false;
-    private bool isReborning = true;
+    public bool isReborning { private set; get; }
     public bool isInLove = false;
     public bool isInShock = false;
 
@@ -33,6 +33,7 @@ public class CharacterMovement : MonoBehaviour
     {
         characterAnimator = GetComponent<Animator>();
         raycaster = transform.Find("Raycaster").GetComponent<RayCaster>();
+        isReborning = true;
     }
 
     void Update()

@@ -21,6 +21,8 @@ public class BeachSide : Interactable
     {
         if (InventoryController.GetInstance().hasIceCream)
             base.OnTriggerEnter2D(collision);
+        else
+            GameManager.GetInstance().GetPlayer().GetComponentInChildren<CharacterThinking>().Think(CharacterThinking.ThinkingEnum.ICE_CREAM);
     }
 
     private IEnumerator EatIceCream()

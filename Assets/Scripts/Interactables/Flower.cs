@@ -41,4 +41,12 @@ public class Flower : Interactable
         MatingSystem.GetInstance().DoMateInFlower(this.gameObject);
         flowerAnimator.SetTrigger("MatedOn");
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!IsInteractionLock())
+            base.OnTriggerEnter2D(collision);
+        else if (!GameManager.GetInstance().GetPlayer().GetComponent<CharacterMovement>().isReborning)
+            GameManager.GetInstance().GetPlayer().GetComponentInChildren<CharacterThinking>().Think(CharacterThinking.ThinkingEnum.MATE);
+    }
 }
