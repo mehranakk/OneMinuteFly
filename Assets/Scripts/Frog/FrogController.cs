@@ -31,7 +31,7 @@ public class FrogController : MonoBehaviour
 
         ResetFrog();
 
-        frogIdleSound.source.PlayDelayed(Random.Range(0, 3f));
+        frogIdleSound.source.PlayDelayed(Random.Range(0, 1f));
     }
 
     // Update is called once per frame

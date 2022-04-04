@@ -2281,7 +2281,7 @@ MonoBehaviour:
   - name: frog-idle
     clip: {fileID: 8300000, guid: 7b93122d42d55416191b005b17708de2, type: 3}
     volumeDefault: 0.6
-    pitchDefault: 0.8
+    pitchDefault: 1
     loopDefault: 1
     source: {fileID: 0}
   - name: frog-attack
