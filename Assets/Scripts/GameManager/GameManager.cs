@@ -166,7 +166,7 @@ public class GameManager : MonoBehaviour
     public void Retry()
     {
         Debug.Log("Retry");
-        LoadScene(1);
+        StartNewGame();
     }    
 
     public void LoadScene(int sceneBuildIndex)

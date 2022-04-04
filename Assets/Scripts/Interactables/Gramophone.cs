@@ -22,7 +22,7 @@ public class Gramophone : Interactable
     {
         yield return new WaitForSeconds(3);
         gramophoneAnimator.SetBool("IsPlaying", false);
-        TaskController.GetInstance().DoneTask(TaskController.TasksEnum.JAZZ);
         GameManager.GetInstance().UnpauseMainGame();
+        TaskController.GetInstance().DoneTask(TaskController.TasksEnum.JAZZ);
     }
 }

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Task
 {
-    public delegate void TaskDoneEvent();
-    public event TaskDoneEvent OnTaskDone;
 
     string description;
 
@@ -20,12 +18,11 @@ public class Task
     public void Done()
     {
         isDone = true;
-        OnTaskDone?.Invoke();
     }
 
     public string GetDescription()
     {
-        return description;
+        return this.description;
     }
 
     public bool IsTaskDone()

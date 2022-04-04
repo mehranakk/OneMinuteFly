@@ -128,6 +128,7 @@ public class Mate : Interactable
         matingHeaert.SetActive(false);
         GameManager.GetInstance().GetPlayer().GetComponent<CharacterMovement>().EndMating();
         GameManager.GetInstance().UnpauseMainGame();
+        TaskController.GetInstance().DoneTask(TaskController.TasksEnum.MATE);
     }
 
     public void MateInFlower(GameObject flower)

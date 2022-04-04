@@ -12,33 +12,50 @@ public class TaskUI: MonoBehaviour
     [SerializeField] private Sprite checkbox_checked;
 
     private TextMeshProUGUI description;
-    private Image checkbox;
+    private GameObject checkbox;
 
     public void Init()
     {
         description = transform.Find("Description").GetComponent<TextMeshProUGUI>();
-        checkbox = transform.Find("CheckBox").GetComponent<Image>();
+        checkbox = transform.Find("CheckBox").gameObject;
     }
 
     public void SetTask(Task task)
     {
-        this.task = task;
-        this.task.OnTaskDone += OnTaskDone;
-        description.text = this.task.GetDescription();
-        if (this.task.IsTaskDone())
-            checkbox.sprite = checkbox_checked;
+        //this.task = task;
+        //this.task.OnTaskDone += OnTaskDone;
+        description.text = task.GetDescription();
+        if (task.IsTaskDone())
+        {
+            checkbox.GetComponent<Animator>().enabled = false;
+            checkbox.GetComponent<SpriteRenderer>().sprite = checkbox_checked;
+        }
         else
-            checkbox.sprite = checkbox_empty;
+            checkbox.GetComponent<SpriteRenderer>().sprite = checkbox_empty;
 
+    }
+
+    public void DoneTask()
+    {
+        checkbox.GetComponent<Animator>().SetTrigger("Check");
+        //checkbox.GetComponent<Animation>().Play("CheckboxChecking");
+        StartCoroutine(WaitAndDisableAnimator());
+    }
+
+    private IEnumerator WaitAndDisableAnimator()
+    {
+        yield return new WaitForSeconds(2f);
+        checkbox.GetComponent<Animator>().enabled = false;
+        checkbox.GetComponent<SpriteRenderer>().sprite = checkbox_checked;
     }
 
     private void OnTaskDone()
     {
-        checkbox.sprite = checkbox_checked;
+        checkbox.GetComponent<SpriteRenderer>().sprite = checkbox_checked;
     }
 
     private void OnDestroy()
     {
-        task.OnTaskDone -= OnTaskDone;
+        //task.OnTaskDone -= OnTaskDone;
     }
 }

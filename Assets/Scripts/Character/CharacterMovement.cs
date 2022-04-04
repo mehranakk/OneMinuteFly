@@ -133,9 +133,6 @@ public class CharacterMovement : MonoBehaviour
 
         speed.x = (speed.x > 0 && isRightBlock) || (speed.x < 0 && isLeftBlock) ? 0 : speed.x;
         speed.y = (speed.y > 0 && isUpBlock) || (speed.y < 0 && isDownBlock) ? 0 : speed.y;
-
-        if (horizontalInput != 0 || verticalInput != 0)
-            TaskController.GetInstance().DoneTask(TaskController.TasksEnum.FLY);
     }
 
     private void GoToFlowerForMating()
