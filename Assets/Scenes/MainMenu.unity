@@ -2708,6 +2708,18 @@ MonoBehaviour:
     pitchDefault: 1
     loopDefault: 1
     source: {fileID: 0}
+  - name: follow
+    clip: {fileID: 8300000, guid: f9f3342c9b4464c1f9de57fe023497ac, type: 3}
+    volumeDefault: 1
+    pitchDefault: 0.8
+    loopDefault: 0
+    source: {fileID: 0}
+  - name: powerup
+    clip: {fileID: 8300000, guid: 9a4c02fde0f40458f96557f461ee6b1e, type: 3}
+    volumeDefault: 1
+    pitchDefault: 1
+    loopDefault: 0
+    source: {fileID: 0}
 --- !u!4 &1713248603
 Transform:
   m_ObjectHideFlags: 0

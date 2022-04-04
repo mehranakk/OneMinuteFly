@@ -41,6 +41,8 @@ public class Mate : Interactable
         LockInteraction();
         MatingSystem.GetInstance().SetFollowingMateAndUnlockFlowers(this);
         GameManager.GetInstance().GetPlayer().GetComponent<CharacterMovement>().isInLove = false;
+
+        AudioManager.GetInstance().PlayByName("follow", transform.position);
     }
 
     private void Update()

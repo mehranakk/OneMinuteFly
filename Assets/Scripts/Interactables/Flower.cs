@@ -40,6 +40,7 @@ public class Flower : Interactable
         Debug.Log("Interact With flower");
         MatingSystem.GetInstance().DoMateInFlower(this.gameObject);
         flowerAnimator.SetTrigger("MatedOn");
+        AudioManager.GetInstance().PlayByName("powerup", transform.position);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
