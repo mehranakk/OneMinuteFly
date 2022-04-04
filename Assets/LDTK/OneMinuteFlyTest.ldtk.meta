@@ -40,6 +40,10 @@ ScriptedImporter:
     _asset: {fileID: 2218438596654090411, guid: a20e8641553b78d49a2959c889111afd, type: 3}
   - _key: GarbageSpawnPoint
     _asset: {fileID: 3853804403212790865, guid: 2b3306c5ba6eb400081591bfe28245de, type: 3}
+  - _key: BeachSide
+    _asset: {fileID: 2945690661540689468, guid: 4270f9adc7dc2e24c8eff0ccd693d01c, type: 3}
+  - _key: IceCream
+    _asset: {fileID: 4165473090189274822, guid: e0a7a392225cc6449b482410d4728e46, type: 3}
   _enumGenerate: 0
   _enumPath: 
   _enumNamespace: 

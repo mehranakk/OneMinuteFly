@@ -148,7 +148,7 @@
 				{
 					"__identifier": "Frog",
 					"__grid": [30,6],
-					"__pivot": [0,0],
+					"__pivot": [0.5,0.5],
 					"__tags": [],
 					"__tile": null,
 					"__smartColor": "#056731",
@@ -162,7 +162,7 @@
 				{
 					"__identifier": "Frog",
 					"__grid": [30,27],
-					"__pivot": [0,0],
+					"__pivot": [0.5,0.5],
 					"__tags": [],
 					"__tile": null,
 					"__smartColor": "#056731",
@@ -190,7 +190,7 @@
 				{
 					"__identifier": "Gramophone",
 					"__grid": [22,20],
-					"__pivot": [0,0],
+					"__pivot": [0.5,0.5],
 					"__tags": [],
 					"__tile": null,
 					"__smartColor": "#DFD40E",
@@ -204,7 +204,7 @@
 				{
 					"__identifier": "Fountain",
 					"__grid": [25,13],
-					"__pivot": [0,0],
+					"__pivot": [0.5,0.5],
 					"__tags": [],
 					"__tile": null,
 					"__smartColor": "#0902F0",
@@ -298,6 +298,34 @@
 					"defUid": 178,
 					"px": [560,368],
 					"fieldInstances": [{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 179, "realEditorValues": [] }]
+				},
+				{
+					"__identifier": "IceCream",
+					"__grid": [10,24],
+					"__pivot": [0.5,0.5],
+					"__tags": [],
+					"__tile": null,
+					"__smartColor": "#02F4F7",
+					"iid": "a4532a80-8dc0-11ec-8a03-ffb16e57e58f",
+					"width": 16,
+					"height": 16,
+					"defUid": 181,
+					"px": [160,384],
+					"fieldInstances": []
+				},
+				{
+					"__identifier": "BeachSide",
+					"__grid": [11,28],
+					"__pivot": [0.5,0.5],
+					"__tags": [],
+					"__tile": null,
+					"__smartColor": "#FFDD03",
+					"iid": "ab07eeb0-8dc0-11ec-8a03-f37d68282c87",
+					"width": 16,
+					"height": 16,
+					"defUid": 180,
+					"px": [176,448],
+					"fieldInstances": []
 				}
 			]
 		},

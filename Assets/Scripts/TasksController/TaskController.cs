@@ -9,6 +9,7 @@ public class TaskController
     {
         MATE,
         DIVE,
+        EAT_ICECREAM,
         PARTY,
         JAZZ
 
@@ -35,6 +36,7 @@ public class TaskController
         tasks.Clear();
         tasks.Add(TasksEnum.MATE, new Task("Mate for the first time"));
         tasks.Add(TasksEnum.DIVE, new Task("Dive in a fountain"));
+        tasks.Add(TasksEnum.EAT_ICECREAM, new Task("Eat ice poop at beach in a shadow"));
         tasks.Add(TasksEnum.PARTY, new Task("Party with cool kids"));
         tasks.Add(TasksEnum.JAZZ, new Task("Listen to Jazz"));
     }

@@ -56,7 +56,7 @@ public class BouncerFly : Interactable
 
         player = GameManager.GetInstance().GetPlayer();
 
-        if (player.GetComponent<InventoryController>().GetCoin(1))
+        if (InventoryController.GetInstance().GetCoin(1))
         {
             ShouldBlock(false);
             LockInteraction();

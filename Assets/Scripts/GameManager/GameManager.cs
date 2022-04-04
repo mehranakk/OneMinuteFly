@@ -219,6 +219,7 @@ public class GameManager : MonoBehaviour
         InitCanvas();
         MatingSystem.GetInstance().Init();
         TaskController.GetInstance().Init();
+        InventoryController.GetInstance().Init();
     }
 
     private void ResetLifeTimer()
