@@ -88,6 +88,11 @@ public class FrogController : MonoBehaviour
         attackInProgress = false;
     }
 
+    public void StopIdleAudio()
+    {
+        frogIdleSound.source.Stop();
+    }
+
     private void OnGameOver() => frogIdleSound.source.Stop();
     private void OnPlayerDeath()
     {

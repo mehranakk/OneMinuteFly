@@ -155,6 +155,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("Win");
         PauseMainGame();
         winMenu.SetActive(true);
+
+        AudioManager.GetInstance().StopEverything();
     }
 
     public void AfterReborn()

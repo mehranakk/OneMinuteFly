@@ -134,4 +134,13 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StopEverything()
+    {
+        foreach (Sound s in sounds)
+            s.source.Stop();
+
+        foreach (FrogController f in GameObject.FindObjectsOfType<FrogController>())
+            f.StopIdleAudio();
+    }
+
 }
