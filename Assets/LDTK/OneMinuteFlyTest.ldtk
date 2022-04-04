@@ -10,7 +10,7 @@
 	},
 	"jsonVersion": "1.1.0",
 	"appBuildId": 458005,
-	"nextUid": 176,
+	"nextUid": 177,
 	"identifierStyle": "Capitalize",
 	"worldLayout": "Free",
 	"worldGridWidth": 256,
@@ -942,6 +942,34 @@
 					"tilesetUid": null
 				}
 			]
+		},
+		{
+			"identifier": "Gramophone",
+			"uid": 176,
+			"tags": [],
+			"width": 16,
+			"height": 16,
+			"resizableX": false,
+			"resizableY": false,
+			"keepAspectRatio": false,
+			"tileOpacity": 1,
+			"fillOpacity": 1,
+			"lineOpacity": 1,
+			"hollow": false,
+			"color": "#DFD40E",
+			"renderMode": "Rectangle",
+			"showName": true,
+			"tilesetId": null,
+			"tileId": null,
+			"tileRenderMode": "FitInside",
+			"tileRect": null,
+			"nineSliceBorders": [],
+			"maxCount": 0,
+			"limitScope": "PerLevel",
+			"limitBehavior": "MoveLastOne",
+			"pivotX": 0,
+			"pivotY": 0,
+			"fieldDefs": []
 		}
 	], "tilesets": [
 		{
@@ -1046,7 +1074,7 @@
 			"enumTags": [],
 			"customData": [],
 			"savedSelections": [],
-			"cachedPixelData": { "opaqueTiles": "111111111", "averageColors": "f578f578f578f578f678f578f568f578f568" }
+			"cachedPixelData": null
 		},
 		{
 			"__cWid": 3,
@@ -1065,7 +1093,7 @@
 			"enumTags": [],
 			"customData": [],
 			"savedSelections": [],
-			"cachedPixelData": { "opaqueTiles": "000010000", "averageColors": "e8a6f8a7e8a6e8a7f9b7e8a6f8a6f9a7f8a6" }
+			"cachedPixelData": null
 		},
 		{
 			"__cWid": 3,
@@ -1084,7 +1112,7 @@
 			"enumTags": [],
 			"customData": [],
 			"savedSelections": [],
-			"cachedPixelData": { "opaqueTiles": "000010011", "averageColors": "efc3efc3efc3ffc3ffc3ffc3fda4fda4fea4" }
+			"cachedPixelData": null
 		}
 	], "enums": [{ "identifier": "Enum", "uid": 143, "values": [], "iconTilesetUid": 123, "externalRelPath": null, "externalFileChecksum": null, "tags": [] }], "externalEnums": [], "levelFields": [] },
 	"levels": [

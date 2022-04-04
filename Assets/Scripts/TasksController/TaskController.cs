@@ -10,6 +10,7 @@ public class TaskController
         FLY,
         POOP,
         PARTY,
+        JAZZ
 
     }
     private static TaskController instance;
@@ -33,6 +34,7 @@ public class TaskController
             tasks.Add(TasksEnum.FLY, new Task("Fly for the first time"));
             tasks.Add(TasksEnum.POOP, new Task("Poop somewhere nice"));
             tasks.Add(TasksEnum.PARTY, new Task("Party with cool kids"));
+            tasks.Add(TasksEnum.JAZZ, new Task("Listen to Jazz"));
         }
     }
 
