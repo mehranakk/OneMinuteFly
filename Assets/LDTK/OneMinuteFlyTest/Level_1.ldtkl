@@ -217,7 +217,7 @@
 				},
 				{
 					"__identifier": "GarbageSpawnPoint",
-					"__grid": [34,21],
+					"__grid": [32,20],
 					"__pivot": [0,0],
 					"__tags": [],
 					"__tile": null,
@@ -226,12 +226,12 @@
 					"width": 16,
 					"height": 16,
 					"defUid": 178,
-					"px": [544,336],
+					"px": [512,320],
 					"fieldInstances": [{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 179, "realEditorValues": [] }]
 				},
 				{
 					"__identifier": "GarbageSpawnPoint",
-					"__grid": [33,21],
+					"__grid": [33,23],
 					"__pivot": [0,0],
 					"__tags": [],
 					"__tile": null,
@@ -240,12 +240,12 @@
 					"width": 16,
 					"height": 16,
 					"defUid": 178,
-					"px": [528,336],
+					"px": [528,368],
 					"fieldInstances": [{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 179, "realEditorValues": [] }]
 				},
 				{
 					"__identifier": "GarbageSpawnPoint",
-					"__grid": [32,21],
+					"__grid": [30,22],
 					"__pivot": [0,0],
 					"__tags": [],
 					"__tile": null,
@@ -254,7 +254,7 @@
 					"width": 16,
 					"height": 16,
 					"defUid": 178,
-					"px": [512,336],
+					"px": [480,352],
 					"fieldInstances": [{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 179, "realEditorValues": [] }]
 				},
 				{
@@ -264,39 +264,11 @@
 					"__tags": [],
 					"__tile": null,
 					"__smartColor": "#000000",
-					"iid": "64506190-8dc0-11ec-b042-5797dbc1ebb6",
-					"width": 16,
-					"height": 16,
-					"defUid": 178,
-					"px": [560,336],
-					"fieldInstances": [{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 179, "realEditorValues": [] }]
-				},
-				{
-					"__identifier": "GarbageSpawnPoint",
-					"__grid": [35,22],
-					"__pivot": [0,0],
-					"__tags": [],
-					"__tile": null,
-					"__smartColor": "#000000",
 					"iid": "64ba9510-8dc0-11ec-b042-ef02e7d577cb",
 					"width": 16,
 					"height": 16,
 					"defUid": 178,
-					"px": [560,352],
-					"fieldInstances": [{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 179, "realEditorValues": [] }]
-				},
-				{
-					"__identifier": "GarbageSpawnPoint",
-					"__grid": [35,23],
-					"__pivot": [0,0],
-					"__tags": [],
-					"__tile": null,
-					"__smartColor": "#000000",
-					"iid": "65396200-8dc0-11ec-b042-cd3880047139",
-					"width": 16,
-					"height": 16,
-					"defUid": 178,
-					"px": [560,368],
+					"px": [560,336],
 					"fieldInstances": [{ "__identifier": "Type", "__value": -1, "__type": "Int", "__tile": null, "defUid": 179, "realEditorValues": [] }]
 				},
 				{

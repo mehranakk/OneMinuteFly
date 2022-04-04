@@ -14,6 +14,7 @@ public class InventoryUI : MonoBehaviour
     {
         icecreamGameObject = transform.Find("IceCream").gameObject;
         coinGameObject = transform.Find("Coin").gameObject;
+        cointAmountText = coinGameObject.GetComponentInChildren<TextMeshProUGUI>();
     }
 
     void Start()
@@ -31,6 +32,7 @@ public class InventoryUI : MonoBehaviour
                 icecreamGameObject.SetActive(true);
                 break;
             case InventoryController.PickUpItemsEnum.COIN:
+                Debug.Log("adding coin to inventory");
                 //coinGameObject.SetActive(true);
                 int coinAmount = InventoryController.GetInstance()._coins;
                 cointAmountText.text = coinAmount.ToString();
