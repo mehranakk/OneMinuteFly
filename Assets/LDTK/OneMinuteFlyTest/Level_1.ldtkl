@@ -200,6 +200,20 @@
 					"defUid": 176,
 					"px": [352,320],
 					"fieldInstances": []
+				},
+				{
+					"__identifier": "Fountain",
+					"__grid": [25,13],
+					"__pivot": [0,0],
+					"__tags": [],
+					"__tile": null,
+					"__smartColor": "#0902F0",
+					"iid": "6063d530-8dc0-11ec-b3f9-dd7de8666b74",
+					"width": 16,
+					"height": 16,
+					"defUid": 177,
+					"px": [400,208],
+					"fieldInstances": []
 				}
 			]
 		},

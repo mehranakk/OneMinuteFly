@@ -8,7 +8,7 @@ public class TaskController
     public enum TasksEnum
     {
         MATE,
-        POOP,
+        DIVE,
         PARTY,
         JAZZ
 
@@ -34,7 +34,7 @@ public class TaskController
     {
         tasks.Clear();
         tasks.Add(TasksEnum.MATE, new Task("Mate for the first time"));
-        tasks.Add(TasksEnum.POOP, new Task("Poop somewhere nice"));
+        tasks.Add(TasksEnum.DIVE, new Task("Dive in a fountain"));
         tasks.Add(TasksEnum.PARTY, new Task("Party with cool kids"));
         tasks.Add(TasksEnum.JAZZ, new Task("Listen to Jazz"));
     }

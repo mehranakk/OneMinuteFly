@@ -102,6 +102,23 @@
 						{ "__identifier": "Size", "__value": 1, "__type": "Int", "__tile": null, "defUid": 147, "realEditorValues": [] },
 						{ "__identifier": "Color", "__value": "#FFDC00", "__type": "Color", "__tile": null, "defUid": 148, "realEditorValues": [{ "id": "V_Int", "params": [16768000] }] }
 					]
+				},
+				{
+					"__identifier": "Flower",
+					"__grid": [9,10],
+					"__pivot": [0.5,0.5],
+					"__tags": [],
+					"__tile": null,
+					"__smartColor": "#FF0000",
+					"iid": "4718c400-8dc0-11ec-b3f9-93e7900c6a08",
+					"width": 16,
+					"height": 16,
+					"defUid": 144,
+					"px": [152,168],
+					"fieldInstances": [
+						{ "__identifier": "Size", "__value": 1, "__type": "Int", "__tile": null, "defUid": 147, "realEditorValues": [] },
+						{ "__identifier": "Color", "__value": "#FF0000", "__type": "Color", "__tile": null, "defUid": 148, "realEditorValues": [] }
+					]
 				}
 			]
 		},

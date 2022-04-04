@@ -24,6 +24,11 @@ public class CharacterMovement : MonoBehaviour
     private bool isMating = false;
     private GameObject matingFlower;
 
+    private bool isInAnimationFly = false;
+    private Vector2 animationFlyTarget;
+    private float animationFlyDistance;
+
+
     private void Awake()
     {
         characterAnimator = GetComponent<Animator>();
@@ -35,6 +40,12 @@ public class CharacterMovement : MonoBehaviour
         if (isMating)
         {
             GoToFlowerForMating();
+            return;
+        }
+
+        if (isInAnimationFly)
+        {
+            AnimationFly();
             return;
         }
 
@@ -163,6 +174,50 @@ public class CharacterMovement : MonoBehaviour
     {
         characterAnimator.SetTrigger("Party");
         TaskController.GetInstance().DoneTask(TaskController.TasksEnum.PARTY);
+    }
+
+    public void StartJazzDance()
+    {
+        characterAnimator.SetBool("JazzDancing", true);
+    }
+
+    public void EndJazzDance()
+    {
+        characterAnimator.SetBool("JazzDancing", false);
+    }
+
+    private void AnimationFly()
+    {
+        if (Vector2.Distance(transform.position, animationFlyTarget) < animationFlyDistance)
+        {
+            speed = Vector2.zero;
+            return;
+        }
+        speed = velocity * (animationFlyTarget - (Vector2)transform.position).normalized;
+    }
+
+    public void EnableAnimationFly(Vector2 targetPos, float distance)
+    {
+        isInAnimationFly = true;
+        animationFlyTarget = targetPos;
+        animationFlyDistance = distance;
+    }
+
+    public void DisableAnimationFly()
+    {
+        isInAnimationFly = false;
+        animationFlyTarget = Vector2.zero;
+        animationFlyDistance = 0;
+    }
+
+    public void HideCharacterSpriteRenderer()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    public void UnhideCharacterSpriteRenderer()
+    {
+        GetComponent<SpriteRenderer>().enabled = true;
     }
 
     public void Die()

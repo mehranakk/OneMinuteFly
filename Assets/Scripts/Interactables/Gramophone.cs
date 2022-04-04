@@ -13,15 +13,17 @@ public class Gramophone : Interactable
     }
     public override void Interact()
     {
-        gramophoneAnimator.SetBool("IsPlaying", true);
-        GameManager.GetInstance().PauseMainGame();
-        StartCoroutine(WaitAndStopPlaying());
+        StartCoroutine(PlayJazz());
     }
 
-    private IEnumerator WaitAndStopPlaying()
+    private IEnumerator PlayJazz()
     {
-        yield return new WaitForSeconds(3);
+        gramophoneAnimator.SetBool("IsPlaying", true);
+        GameManager.GetInstance().PauseMainGame();
+        GameManager.GetInstance().GetPlayer().GetComponent<CharacterMovement>().StartJazzDance();
+        yield return new WaitForSeconds(5);
         gramophoneAnimator.SetBool("IsPlaying", false);
+        GameManager.GetInstance().GetPlayer().GetComponent<CharacterMovement>().EndJazzDance();
         GameManager.GetInstance().UnpauseMainGame();
         TaskController.GetInstance().DoneTask(TaskController.TasksEnum.JAZZ);
     }
