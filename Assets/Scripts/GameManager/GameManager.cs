@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -32,6 +31,8 @@ public class GameManager : MonoBehaviour
     public delegate void PlayerDeathEvent();
     public event PlayerDeathEvent OnPlayerDeath, OnGameOver;
 
+    private int generation;
+
     private void Awake()
     {
         if (instance != null)
@@ -46,6 +47,11 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoad;
         isGamePaused = true;
         //InitAll();
+    }
+
+    private void Start()
+    {
+        generation = 1;
     }
 
     private void Update()
@@ -108,6 +114,8 @@ public class GameManager : MonoBehaviour
         //MatingSystem.KillMatedMates();
 
         yield return new WaitForSeconds(1.1f);
+
+        generation += 1;
 
         SpawnPlayerAt(checkpointFlower);
         camera.GetComponent<CameraFollow>().target = player.transform;
@@ -193,6 +201,7 @@ public class GameManager : MonoBehaviour
     public void StartNewGame()
     {
         LoadScene(1);
+        generation = 1;
     }
 
     public void Retry()
@@ -294,6 +303,11 @@ public class GameManager : MonoBehaviour
 
         IceCreamSpawner spawner = GameObject.FindObjectOfType<IceCreamSpawner>();
         spawner.Respawn();
+    }
+
+    public int GetCurrentGeneration()
+    {
+        return generation;
     }
 
     private void OnDestroy()
