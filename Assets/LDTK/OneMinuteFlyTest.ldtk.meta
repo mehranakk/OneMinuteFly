@@ -38,6 +38,8 @@ ScriptedImporter:
     _asset: {fileID: 8960437892649248851, guid: e48a80a5219ab1147abc26c3d8a2c15b, type: 3}
   - _key: Fountain
     _asset: {fileID: 2218438596654090411, guid: a20e8641553b78d49a2959c889111afd, type: 3}
+  - _key: GarbageSpawnPoint
+    _asset: {fileID: 3853804403212790865, guid: 2b3306c5ba6eb400081591bfe28245de, type: 3}
   _enumGenerate: 0
   _enumPath: 
   _enumNamespace: 

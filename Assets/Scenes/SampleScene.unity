@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 131218844}
   - component: {fileID: 131218843}
   m_Layer: 0
-  m_Name: SpawnManager
+  m_Name: MateSpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131218842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.20135334, y: 10.708356, z: 0.4197464}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -271,12 +271,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f1434319867274bc2a417dfffda392c4, type: 3}
     volumeDefault: 1
     pitchDefault: 1
-    loopDefault: 1
+    loopDefault: 0
     source: {fileID: 0}
     hasAudibleArea: 1
     minDistance: 5
     maxDistance: 10
-    reference: {fileID: 1976799316}
+    reference: {fileID: 1527925669}
 --- !u!4 &320920649
 Transform:
   m_ObjectHideFlags: 0
@@ -964,6 +964,52 @@ TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: -6723562753544023497, guid: 78b61c0e1b2aa4044ade65d82dd71ca4, type: 3}
   m_PrefabInstance: {fileID: 1976799315}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &922818451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 922818452}
+  - component: {fileID: 922818453}
+  m_Layer: 0
+  m_Name: GarbageSpawManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &922818452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922818451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.493225, y: 7.16391, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &922818453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922818451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce18c583d9704f2499c4a89db651408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  garbagePrefabs:
+  - {fileID: 734845281962860675, guid: 04de86daf51834840859bbf146e5ced1, type: 3}
+  - {fileID: 4117154549264718874, guid: a77991cb93a5f42b09eef9b3c6061f9a, type: 3}
 --- !u!1 &967144362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,6 +1732,11 @@ CanvasRenderer:
 --- !u!19719996 &1513814611 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: 1304362174193224560, guid: 78b61c0e1b2aa4044ade65d82dd71ca4, type: 3}
+  m_PrefabInstance: {fileID: 1976799315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1527925669 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1620513222826460038, guid: 78b61c0e1b2aa4044ade65d82dd71ca4, type: 3}
   m_PrefabInstance: {fileID: 1976799315}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1550222305
@@ -3136,11 +3187,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: -1934345717165055291, guid: 78b61c0e1b2aa4044ade65d82dd71ca4, type: 3}
---- !u!4 &1976799316 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1620513222826460038, guid: 78b61c0e1b2aa4044ade65d82dd71ca4, type: 3}
-  m_PrefabInstance: {fileID: 1976799315}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2080313965
 GameObject:
   m_ObjectHideFlags: 0
