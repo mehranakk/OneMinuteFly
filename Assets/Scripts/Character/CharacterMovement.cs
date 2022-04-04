@@ -36,6 +36,11 @@ public class CharacterMovement : MonoBehaviour
         isReborning = true;
     }
 
+    private void Start()
+    {
+        AudioManager.GetInstance().PlayByName("theme", transform.position);
+    }
+
     void Update()
     {
         if (isMating)

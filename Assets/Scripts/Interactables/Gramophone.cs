@@ -55,9 +55,11 @@ public class Gramophone : Interactable
     {
         Vector3 distance = GameManager.GetInstance().GetPlayer().transform.position - transform.position;
         float playerDistance = distance.magnitude;
-        float audiblePercentage = Mathf.InverseLerp(5, 1, playerDistance);
+        float audiblePercentage = Mathf.InverseLerp(10, 1, playerDistance);
 
         AudioManager.GetInstance().ChangeVolumeByName("jazz", 0.6f * audiblePercentage);
+
+        AudioManager.GetInstance().ChangeVolumeByName("theme", 0.35f * 1 - audiblePercentage);
     }
 
     public void OnPlayerDeath()

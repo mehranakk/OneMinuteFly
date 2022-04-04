@@ -138,6 +138,8 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GameOver");
         dieMenu.SetActive(true);
+
+        AudioManager.GetInstance().StopByName("theme");
     }
 
     private void SpawnPlayerAt(GameObject flower)

@@ -2338,6 +2338,12 @@ MonoBehaviour:
     pitchDefault: 1.5
     loopDefault: 0
     source: {fileID: 0}
+  - name: theme
+    clip: {fileID: 8300000, guid: ade61b4ebf6184fa0854dbe2881b07e4, type: 3}
+    volumeDefault: 0.35
+    pitchDefault: 1
+    loopDefault: 1
+    source: {fileID: 0}
 --- !u!4 &1713248603
 Transform:
   m_ObjectHideFlags: 0
