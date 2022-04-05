@@ -8,11 +8,11 @@
 		"appVersion": "1.1.1",
 		"url": "https://ldtk.io"
 	},
-	"identifier": "Level_1",
+	"identifier": "Level_0",
 	"iid": "c36b44e0-8dc0-11ec-85a0-85e0dae9c232",
 	"uid": 188,
-	"worldX": -2544,
-	"worldY": 16,
+	"worldX": -1808,
+	"worldY": 48,
 	"worldDepth": 0,
 	"pxWid": 1792,
 	"pxHei": 1328,
@@ -640,7 +640,7 @@
 				},
 				{
 					"__identifier": "MateSpawnPoint",
-					"__grid": [93,62],
+					"__grid": [93,64],
 					"__pivot": [0,0],
 					"__tags": [],
 					"__tile": null,
@@ -649,7 +649,7 @@
 					"width": 16,
 					"height": 16,
 					"defUid": 150,
-					"px": [1488,992],
+					"px": [1488,1024],
 					"fieldInstances": []
 				},
 				{

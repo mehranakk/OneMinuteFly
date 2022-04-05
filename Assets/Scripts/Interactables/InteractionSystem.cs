@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractionSystem
 {
-    private Interactable currentIntractableObject;
+    public Interactable currentIntractableObject { private set; get; }
     private static InteractionSystem instance;
 
     private InteractionSystem()
@@ -30,6 +30,7 @@ public class InteractionSystem
 
     public void EnterInteraction()
     {
+        Debug.Log(currentIntractableObject);
         if (currentIntractableObject != null && !currentIntractableObject.IsInteractionLock())
             currentIntractableObject.Interact();
     }

@@ -50,7 +50,9 @@ public class Interactable: MonoBehaviour
         if (!isInteractionLock)
         {
             messageGameObject.SetActive(false);
-            InteractionSystem.GetInstance().ClearCurrentInteractableObject();
+            Interactable currentInteractable = InteractionSystem.GetInstance().currentIntractableObject;
+            if (currentInteractable != null && currentInteractable.Equals(this))
+                InteractionSystem.GetInstance().ClearCurrentInteractableObject();
         }
         GameManager.GetInstance().GetPlayer().GetComponentInChildren<CharacterThinking>().ClearThinking();
     }
